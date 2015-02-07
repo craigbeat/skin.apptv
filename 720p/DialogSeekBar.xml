@@ -105,7 +105,7 @@
 				<top>22</top>
 				<width>354</width>
 				<height>87</height>
-				<texture border="8">button-menu-background.png</texture>
+				<texture border="8">colours/white.png</texture>
 			</control>
 			<control type="label">
 				<left>432</left>

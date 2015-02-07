@@ -13,7 +13,7 @@
 			<top>304</top>
 			<width>344</width>
 			<height>166</height>
-			<texture border="8">button-menu-background.png</texture>
+			<texture border="8">colours/white.png</texture>
 		</control>
 
 		<control type="button" id="1001">

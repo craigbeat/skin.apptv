@@ -8,7 +8,7 @@
 	<controls>
 		<control type="image"><!-- Use a black background until background image has finished loading -->
 			<include>fullscreenimage</include>
-			<texture>colours/black.png</texture>
+			<texture>colours/white.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
 		<control type="image"><!-- Background image -->
@@ -19,7 +19,7 @@
 		</control>
 		<control type="image"><!-- Mask to fade background -->
 			<include>fullscreenimage</include>
-			<texture>colours/black.png</texture>
+			<texture>colours/white.png</texture>
 			<colordiffuse>mask-background</colordiffuse>
 			<aspectratio>stretch</aspectratio>
 			<include>background-fade</include>

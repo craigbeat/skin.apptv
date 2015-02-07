@@ -42,7 +42,7 @@
 				<visible>Skin.HasSetting(background-slideshow)</visible>
 				<control type="image"><!-- Mask out any backgrounds showing around ArtistSlideshow Fanart -->
 					<include>fullscreenimage</include>
-					<texture>colours/black.png</texture>
+					<texture>colours/white.png</texture>
 					<aspectratio>stretch</aspectratio>
 					<visible>SubString(Control.GetLabel(991),blank.png)</visible>
 				</control>
@@ -57,7 +57,7 @@
 			</control>
 			<control type="image"><!-- Mask to fade backgrounds -->
 				<include>fullscreenimage</include>
-				<texture>colours/black.png</texture>
+				<texture>colours/white.png</texture>
 				<colordiffuse>mask-background</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 				<include>background-fade</include>

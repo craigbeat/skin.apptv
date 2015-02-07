@@ -14,7 +14,7 @@
 			<top>72</top>
 			<width>780</width>
 			<height>560</height>
-			<texture border="8">button-menu-background.png</texture>
+			<texture border="8">colours/white.png</texture>
 		</control>
 		<control type="label" id="2"><!-- Dialog heading -->
 			<left>264</left>

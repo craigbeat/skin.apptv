@@ -25,7 +25,7 @@
 					<top>160</top>
 					<width>434</width>
 					<height>475</height>
-					<texture border="8">button-menu-background.png</texture>
+					<texture border="8">colours/white.png</texture>
 				</control>
 				<control type="label"><!-- Dialog heading -->
 					<left>454</left>
@@ -151,7 +151,7 @@
 					<top>160</top>
 					<width>434</width>
 					<height>430</height>
-					<texture border="8">button-menu-background.png</texture>
+					<texture border="8">colours/white.png</texture>
 				</control>
 				<control type="label"><!-- Dialog heading -->
 					<left>454</left>
@@ -271,7 +271,7 @@
 					<top>160</top>
 					<width>434</width>
 					<height>475</height>
-					<texture border="8">button-menu-background.png</texture>
+					<texture border="8">colours/white.png</texture>
 				</control>
 				<control type="label"><!-- Dialog heading -->
 					<left>454</left>
@@ -397,7 +397,7 @@
 					<top>30</top>
 					<width>434</width>
 					<height>655</height>
-					<texture border="8">button-menu-background.png</texture>
+					<texture border="8">colours/white.png</texture>
 				</control>
 				<control type="label"><!-- Dialog heading -->
 					<left>454</left>
@@ -547,7 +547,7 @@
 					<top>160</top>
 					<width>434</width>
 					<height>288</height>
-					<texture border="8">button-menu-background.png</texture>
+					<texture border="8">colours/white.png</texture>
 				</control>
 				<control type="label"><!-- Dialog heading -->
 					<left>454</left>
@@ -655,7 +655,7 @@
 					<top>160</top>
 					<width>434</width>
 					<height>288</height>
-					<texture border="8">button-menu-background.png</texture>
+					<texture border="8">colours/white.png</texture>
 				</control>
 				<control type="label"><!-- Dialog heading -->
 					<left>454</left>

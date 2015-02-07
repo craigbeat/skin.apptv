@@ -9,7 +9,7 @@
 			<top>0</top>
 			<height>80</height>
 			<width>1280</width>
-			<texture>colours/black.png</texture>
+			<texture>colours/white.png</texture>
 			<colordiffuse>osd-background</colordiffuse>
 		</control>
 		<control type="group">

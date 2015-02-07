@@ -9,7 +9,7 @@
 		<control type="group" id="250">
 			<control type="image"><!-- media info background image -->
 				<include>fullscreenimage</include>
-				<texture>colours/black.png</texture>
+				<texture>colours/white.png</texture>
 			</control>
 			<control type="group">
 				<control type="image" id="110"><!-- Service Logo -->

@@ -228,7 +228,7 @@
 			<top>8</top>
 			<width>190</width>
 			<height>190</height>
-			<texture diffuse="mask-rect.png">colours/black.png</texture>
+			<texture diffuse="mask-rect.png">colours/white.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
 		<control type="image">
@@ -315,7 +315,7 @@
 				<top>48</top>
 				<width>190</width>
 				<height>190</height>
-				<texture diffuse="mask-rect.png">colours/black.png</texture>
+				<texture diffuse="mask-rect.png">colours/white.png</texture>
 				<colordiffuse>UnFocusedPosters</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 				<animation effect="rotatey" center="0" end="-60" time="300" condition="true">Conditional</animation>
@@ -336,7 +336,7 @@
 				<top>48</top>
 				<width>190</width>
 				<height>190</height>
-				<texture diffuse="mask-rect.png">colours/black.png</texture>
+				<texture diffuse="mask-rect.png">colours/white.png</texture>
 				<colordiffuse>UnFocusedPosters</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 				<animation effect="rotatey" center="1280" end="60" time="300" condition="true">Conditional</animation>
@@ -855,7 +855,7 @@
 				<top>150</top>
 				<height>38</height>
 				<width>240</width>
-				<label>[COLOR red]$INFO[Window(Weather).Property(Day1.HighTemp)][/COLOR] - [COLOR lightblue]$INFO[Window(Weather).Property(Day1.LowTemp)][/COLOR]</label>
+				<label>[COLOR red]$INFO[Window(Weather).Property(Day1.HighTemp)][/COLOR] | [COLOR lightblue]$INFO[Window(Weather).Property(Day1.LowTemp)][/COLOR]</label>
 				<align>center</align>
 				<font>font18</font>
 			</control>
@@ -909,7 +909,7 @@
 				<top>150</top>
 				<height>38</height>
 				<width>240</width>
-				<label>[COLOR red]$INFO[Window(Weather).Property(Day2.HighTemp)][/COLOR] - [COLOR lightblue]$INFO[Window(Weather).Property(Day2.LowTemp)][/COLOR]</label>
+				<label>[COLOR red]$INFO[Window(Weather).Property(Day2.HighTemp)][/COLOR] | [COLOR lightblue]$INFO[Window(Weather).Property(Day2.LowTemp)][/COLOR]</label>
 				<align>center</align>
 				<font>font18</font>
 			</control>
@@ -963,7 +963,7 @@
 				<top>150</top>
 				<height>38</height>
 				<width>240</width>
-				<label>[COLOR red]$INFO[Window(Weather).Property(Day3.HighTemp)][/COLOR] - [COLOR lightblue]$INFO[Window(Weather).Property(Day3.LowTemp)][/COLOR]</label>
+				<label>[COLOR red]$INFO[Window(Weather).Property(Day3.HighTemp)][/COLOR] | [COLOR lightblue]$INFO[Window(Weather).Property(Day3.LowTemp)][/COLOR]</label>
 				<align>center</align>
 				<font>font18</font>
 			</control>
@@ -1017,7 +1017,7 @@
 				<top>150</top>
 				<height>38</height>
 				<width>240</width>
-				<label>[COLOR red]$INFO[Window(Weather).Property(Day4.HighTemp)][/COLOR] - [COLOR lightblue]$INFO[Window(Weather).Property(Day4.LowTemp)][/COLOR]</label>
+				<label>[COLOR red]$INFO[Window(Weather).Property(Day4.HighTemp)][/COLOR] | [COLOR lightblue]$INFO[Window(Weather).Property(Day4.LowTemp)][/COLOR]</label>
 				<align>center</align>
 				<font>font18</font>
 			</control>

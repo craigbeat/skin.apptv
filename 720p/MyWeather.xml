@@ -49,7 +49,7 @@
 					<visible>Skin.HasSetting(background-slideshow) + Player.HasAudio + !SubString(Window(VideoLibrary).Property(TvTunesIsAlive),True)</visible>
 					<control type="image"><!-- Mask out any backgrounds showing around ArtistSlideshow Fanart -->
 						<include>fullscreenimage</include>
-						<texture>colours/black.png</texture>
+						<texture>colours/white.png</texture>
 						<aspectratio>stretch</aspectratio>
 					</control>
 					<control type="multiimage"><!-- Backgroung ArtistSlideshow fanart image -->
@@ -64,7 +64,7 @@
 			</control>
 			<control type="image"><!-- Mask to fade background -->
 				<include>fullscreenimage</include>
-				<texture>colours/black.png</texture>
+				<texture>colours/white.png</texture>
 				<colordiffuse>mask-background</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 				<include>background-fade</include>

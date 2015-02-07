@@ -13,7 +13,7 @@
 			<top>187</top>
 			<width>920</width>
 			<height>418</height>
-			<texture border="8">button-menu-background.png</texture>
+			<texture border="8">colours/white.png</texture>
 		</control>
 		<control type="label" id="2"><!-- Heading -->
 			<left>213</left>

@@ -16,7 +16,7 @@
 			<top>125</top>
 			<height>175</height>
 			<width>1026</width>
-			<texture border="8">button-menu-background.png</texture>
+			<texture border="8">colours/white.png</texture>
 		</control>
 
 		<!-- Media Info -->

@@ -186,7 +186,7 @@
 				<top>292</top>
 				<width>1280</width>
 				<height>428</height>
-				<texture>colours/black.png</texture>
+				<texture>colours/white.png</texture>
 			</control>
 			<control type="image">
 				<left>0</left>

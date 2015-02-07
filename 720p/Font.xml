@@ -3,85 +3,85 @@
 	<fontset id="Default" idloc="31575" unicode="true">
 		<font>
 			<name>font10</name>
-			<filename>Ubuntu-R.ttf</filename>
-			<size>20</size>
+			<filename>RobotoCondensed-Regular.ttf</filename>
+			<size>18</size>
 		</font>
 		<font>
 			<name>font11</name>
-			<filename>Ubuntu-R.ttf</filename>
-			<size>22</size>
+			<filename>RobotoCondensed-Regular.ttf</filename>
+			<size>20</size>
 		</font>
 		<font>
 			<name>font12</name>
-			<filename>Ubuntu-R.ttf</filename>
-			<size>23</size>
+			<filename>RobotoCondensed-Regular.ttf</filename>
+			<size>21</size>
 		</font>
 		<font>
 			<name>font13</name>
-			<filename>Ubuntu-R.ttf</filename>
-			<size>25</size>
+			<filename>RobotoCondensed-Regular.ttf</filename>
+			<size>23</size>
 		</font>
 		<font>
 			<name>font18</name>
-			<filename>Ubuntu-R.ttf</filename>
-			<size>30</size>
+			<filename>RobotoCondensed-Regular.ttf</filename>
+			<size>28</size>
 		</font>
 		<font>
 			<name>font20</name>
-			<filename>Ubuntu-R.ttf</filename>
-			<size>36</size>
+			<filename>RobotoCondensed-Regular.ttf</filename>
+			<size>34</size>
 		</font>
 		<font>
 			<name>font22</name>
-			<filename>Ubuntu-R.ttf</filename>
-			<size>38</size>
+			<filename>RobotoCondensed-Regular.ttf</filename>
+			<size>36</size>
 		</font>
 		<font>
 			<name>font28</name>
-			<filename>Ubuntu-R.ttf</filename>
-			<size>48</size>
+			<filename>RobotoCondensed-Regular.ttf</filename>
+			<size>46</size>
 		</font>
 	</fontset>
 	<fontset id="Bold" idloc="31576" unicode="true">
 		<font>
 			<name>font10</name>
-			<filename>Ubuntu-B.ttf</filename>
-			<size>20</size>
+			<filename>RobotoCondensed-Bold.ttf</filename>
+			<size>18</size>
 		</font>
 		<font>
 			<name>font11</name>
-			<filename>Ubuntu-B.ttf</filename>
-			<size>22</size>
+			<filename>RobotoCondensed-Bold.ttf</filename>
+			<size>20</size>
 		</font>
 		<font>
 			<name>font12</name>
-			<filename>Ubuntu-B.ttf</filename>
-			<size>23</size>
+			<filename>RobotoCondensed-Bold.ttf</filename>
+			<size>21</size>
 		</font>
 		<font>
 			<name>font13</name>
-			<filename>Ubuntu-B.ttf</filename>
-			<size>25</size>
+			<filename>RobotoCondensed-Bold.ttf</filename>
+			<size>23</size>
 		</font>
 		<font>
 			<name>font18</name>
-			<filename>Ubuntu-B.ttf</filename>
-			<size>30</size>
+			<filename>RobotoCondensed-Bold.ttf</filename>
+			<size>28</size>
 		</font>
 		<font>
 			<name>font20</name>
-			<filename>Ubuntu-B.ttf</filename>
-			<size>36</size>
+			<filename>RobotoCondensed-Bold.ttf</filename>
+			<size>34</size>
 		</font>
 		<font>
 			<name>font22</name>
-			<filename>Ubuntu-B.ttf</filename>
-			<size>38</size>
+			<filename>RobotoCondensed-Bold.ttf</filename>
+			<size>36</size>
 		</font>
 		<font>
 			<name>font28</name>
-			<filename>Ubuntu-B.ttf</filename>
-			<size>48</size>
+			<filename>RobotoCondensed-Bold.ttf</filename>
+			<size>46</size>
 		</font>
 	</fontset>
 	<fontset id="XBMC Default" idloc="31577" unicode="true">

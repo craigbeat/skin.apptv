@@ -3,14 +3,14 @@
 	<variable name="BackgroundImage">
 		<value condition="Skin.HasSetting(background-fanart) + !IsEmpty(ListItem.Property(Fanart_Image))">$INFO[ListItem.Property(Fanart_Image)]</value>
 		<value condition="!IsEmpty(Skin.String(background-custom))">$INFO[Skin.String(background-custom)]</value>
-		<value>background.png</value>
+		<value>colours/BG4.jpg</value>
 	</variable>
 	<variable name="VideoBackgndImage">
 		<value condition="Skin.HasSetting(background-fanart) + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="Skin.HasSetting(background-fanart) + !IsEmpty(ListItem.Property(Fanart_Image))">$INFO[ListItem.Property(Fanart_Image)]</value>
 		<value condition="Skin.HasSetting(background-fanart) + !IsEmpty(Fanart.Image)">$INFO[Fanart.Image]</value>
 		<value condition="!IsEmpty(Skin.String(background-custom))">$INFO[Skin.String(background-custom)]</value>
-		<value>background.png</value>
+		<value>colours/BG4.png</value>
 	</variable>
 	<variable name="VideoRating">
 		<value condition="substring(ListItem.Mpaa,Rated G) | substring(ListItem.Mpaa,Rated: G)">special://skin/extras/images/rating/mpaa_general.png</value>

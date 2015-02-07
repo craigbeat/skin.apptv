@@ -9,7 +9,7 @@
 			<top>174</top>
 			<width>690</width>
 			<height>372</height>
-			<texture border="8">button-menu-background.png</texture>
+			<texture border="8">colours/white.png</texture>
 		</control>
 		<control type="label"><!-- Heading -->
 			<left>315</left>

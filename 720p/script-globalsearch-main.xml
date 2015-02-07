@@ -68,7 +68,7 @@
 				</control>
 				<control type="image"><!-- Mask to fade backgrounds -->
 					<include>fullscreenimage</include>
-					<texture>colours/black.png</texture>
+					<texture>colours/white.png</texture>
 					<colordiffuse>mask-background</colordiffuse>
 					<aspectratio>stretch</aspectratio>
 					<include>background-fade</include>

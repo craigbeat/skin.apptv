@@ -14,7 +14,7 @@
 				<top>0</top>
 				<width>708</width>
 				<height>87</height>
-				<texture border="8">button-menu-background.png</texture>
+				<texture border="8">colours/white.png</texture>
 				<colordiffuse>osd-background</colordiffuse>
 			</control>
 			<control type="label" id="10"><!-- Dialog heading -->

@@ -15,7 +15,7 @@
 			<top>60</top>
 			<width>1038</width>
 			<height>540</height>
-			<texture border="8">button-menu-background.png</texture>
+			<texture border="8">colours/white.png</texture>
 			<visible>Control.IsVisible(3)</visible>
 		</control>
 		<control type="image"><!-- Dialog background image type 6 -->
@@ -23,7 +23,7 @@
 			<top>60</top>
 			<width>1038</width>
 			<height>516</height>
-			<texture border="8">button-menu-background.png</texture>
+			<texture border="8">colours/white.png</texture>
 			<visible>Control.IsVisible(6)</visible>
 		</control>
 		<control type="label" id="1"><!-- Dialog heading -->

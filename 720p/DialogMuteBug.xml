@@ -10,7 +10,7 @@
 				<top>0</top>
 				<width>354</width>
 				<height>162</height>
-				<texture border="8">button-menu-background.png</texture>
+				<texture border="8">colours/white.png</texture>
 			</control>
 			<control type="group">
 				<control type="image"><!-- Speaker image -->
