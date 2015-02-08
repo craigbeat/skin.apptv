@@ -8,7 +8,7 @@
 		<control type="group"><!-- Weather screen background image -->
 			<control type="image"><!-- Solid background -->
 				<include>fullscreenimage</include>
-				<texture>background.png</texture>
+				<texture>colours/BG4.jpg</texture>
 				<aspectratio>stretch</aspectratio>
 				<visible>IsEmpty(Skin.String(background-custom))</visible>
 			</control>

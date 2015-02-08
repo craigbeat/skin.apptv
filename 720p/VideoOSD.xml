@@ -19,7 +19,7 @@
 				<top>646</top>
 				<height>80</height>
 				<width>1280</width>
-				<texture>background.png</texture>
+				<texture>colours/BG4.jpg</texture>
 				<colordiffuse>osd-background</colordiffuse>
 				<visible>[Window.IsActive(fullscreenvideo)] + ![Window.IsActive(MusicOSD)]</visible>
 			</control>
