@@ -22,6 +22,12 @@
 			<size>23</size>
 		</font>
 		<font>
+			<name>font14</name>
+			<filename>RobotoCondensed-Bold.ttf</filename>
+			<size>20</size>
+		</font>
+		
+		<font>
 			<name>font18</name>
 			<filename>RobotoCondensed-Regular.ttf</filename>
 			<size>28</size>
@@ -40,6 +46,11 @@
 			<name>font28</name>
 			<filename>RobotoCondensed-Regular.ttf</filename>
 			<size>46</size>
+		</font>
+		<font>
+			<name>font29</name>
+			<filename>Roboto-Light.ttf</filename>
+			<size>70</size>
 		</font>
 	</fontset>
 	<fontset id="Bold" idloc="31576" unicode="true">

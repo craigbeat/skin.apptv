@@ -3,13 +3,20 @@
 	<include name="PVRTimelineView">
 		<control type="group"><!-- TV guide timeline -->
 			<visible>Control.IsVisible(10)</visible>
-			<control type="label"><!-- Current time -->
-				<posx>50</posx>
-				<posy>50</posy>
-				<width>310</width>
+			<control type="label"><!-- Name of the app -->
+				<posx>15</posx>
+				<posy>32</posy>
+				<width>410</width>
 				<height>32</height>
-				<font>font18</font>
-				<label>$INFO[System.Time]</label>
+				<font>font29</font>
+				<textcolor>semi-transparent-text</textcolor>
+				<label>$VAR[PVRHeading]</label>
+			</control>
+			<control type="image">
+				<posy>80</posy>				
+				<width>1280</width>
+				<height>4</height>
+				<texture>separator.png</texture>
 			</control>
 			<control type="epggrid" id="10"><!-- EPG grid -->
 				<viewtype label="19032">list</viewtype>
@@ -69,17 +76,18 @@
 						<texture>$INFO[ListItem.Icon]</texture>
 					</control>
 					<control type="label">
-						<posx>22</posx>
+						<posx>12</posx>
 						<posy>0</posy>
 						<width>45</width>
 						<height>52</height>
 						<align>center</align>
+						<font>font14</font>
 						<selectedcolor>listselected-text</selectedcolor>
-						<label>$INFO[ListItem.ChannelNumber]</label>
+						<label>$INFO[ListItem.ChannelNumber] |</label>
 						<visible>IsEmpty(ListItem.Icon)</visible>
 					</control>
 					<control type="label" id="1">
-						<posx>52</posx>
+						<posx>62</posx>
 						<posy>0</posy>
 						<width>238</width>
 						<height>52</height>
@@ -106,21 +114,22 @@
 						<texture>$INFO[ListItem.Icon]</texture>
 					</control>
 					<control type="label">
-						<posx>20</posx>
+						<posx>12</posx>
 						<posy>0</posy>
 						<width>45</width>
 						<height>52</height>
 						<align>center</align>
+						<font>font11</font>						
 						<selectedcolor>listselected-text</selectedcolor>
-						<label>$INFO[ListItem.ChannelNumber]</label>
+						<label>$INFO[ListItem.ChannelNumber] |</label>
 						<visible>IsEmpty(ListItem.Icon)</visible>
 					</control>
 					<control type="label" id="1">
-						<posx>52</posx>
+						<posx>62</posx>
 						<posy>0</posy>
 						<width>238</width>
 						<height>52</height>
-						<font>font11</font>
+						<font>font14</font>
 						<selectedcolor>listselected-text</selectedcolor>
 						<label>$INFO[ListItem.ChannelName]</label>
 					</control>
@@ -158,7 +167,7 @@
 						<height>52</height>
 						<posx>0</posx>
 						<posy>0</posy>
-						<texture border="3">colours/blue.png</texture>
+						<texture border="3">colours/darkgrey.png</texture>
 						<colordiffuse>osd-background</colordiffuse>
 					</control>
 					<control type="image" id="2">
@@ -167,20 +176,23 @@
 						<posx>0</posx>
 						<posy>0</posy>
 						<aspectratio>stretch</aspectratio>
-						<texture>colours/blue.png</texture>
+						<texture>colours/midgrey.png</texture>
 						<colordiffuse>osd-background</colordiffuse>
+						<bordersize>5</bordersize>
 					</control>
 					<control type="label" id="1">
 						<posx>20</posx>
 						<posy>0</posy>
 						<width>10</width>
 						<height>48</height>
-						<font>font11</font>
+						<font>font14</font>
 						<selectedcolor>listselected-text</selectedcolor>
 						<include condition="Skin.HasSetting(text-autoscroll)">scrolltext</include>
 						<wrapmultiline>true</wrapmultiline>
 						<label>$INFO[ListItem.Label]</label>
+						<textcolor>white-text</textcolor>
 					</control>
+					
 					<control type="image">
 						<posx>2</posx>
 						<posy>18</posy>
@@ -192,9 +204,9 @@
 			</control>
 			<control type="label">
 				<label>$INFO[ListItem.Title]</label>
-				<posx>30</posx>
+				<posx>332</posx>
 				<posy>566</posy>
-				<width>700</width>
+				<width>500</width>
 				<height>32</height>
 				<font>font18</font>
 				<wrapmultiline>true</wrapmultiline>
@@ -210,20 +222,30 @@
 			</control>
 			<control type="image">
 				<visible>!IsEmpty(ListItem.Title)</visible>
-				<posx>30</posx>
+				<posx>330</posx>
 				<posy>602</posy>
-				<width>1220</width>
+				<width>920</width>
 				<height>4</height>
 				<texture>separator.png</texture>
 			</control>
 			<control type="textbox"><!-- Plot -->
-				<posx>30</posx>
+				<posx>332</posx>
 				<posy>608</posy>
-				<width>1220</width>
+				<width>918</width>
 				<height>80</height>
 				<font>font11</font>
 				<label>$INFO[ListItem.Plot]</label>
 				<visible>!IsEmpty(ListItem.Plot)</visible>
+			</control>
+			<control type="textbox"><!-- Genre -->
+				<posx>30</posx>
+				<posy>608</posy>
+				<width>300</width>
+				<height>80</height>
+				<font>font14</font>
+				<align>center</align>
+				<label>$INFO[ListItem.Genre]</label>
+				<visible>!IsEmpty(ListItem.Genre)</visible>
 			</control>
 		</control>
 	</include>

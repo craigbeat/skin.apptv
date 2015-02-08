@@ -5,6 +5,8 @@
 
 			<!-- Text -->
 	<color name="info-text">FF0066CC</color>
+	<color name="white-text">FFFFFFFF</color>
+	<color name="semi-transparent-text">AA333333</color>
 	<color name="disabled-text">FF333333</color>
 	<color name="button-text">FF222222</color>
 	<color name="shutdown-text">FF000000</color>
