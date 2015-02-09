@@ -10,6 +10,40 @@
 		<visible>!Window.IsVisible(movieinformation)</visible>
 		<include>backgroundvideo</include>
 		<include>Fake-Overlay</include>
+		<control type="label"><!-- Name of the app -->
+			<posx>15</posx>
+			<posy>32</posy>
+			<width>410</width>
+			<height>32</height>
+			<font>font29</font>
+			<textcolor>semi-transparent-text</textcolor>
+			<label>$VAR[VideoHeadings]</label>
+		</control>
+		<control type="grouplist">
+			<right>330</right>
+			<top>45</top>
+			<width>auto</width>
+			<height>62</height>
+			<align>right</align>
+			<aligny>bottom</aligny>
+			<orientation>horizontal</orientation>
+			<control type="label"><!-- Video screen heading -->
+				<width max="356">auto</width>
+				<height>72</height>
+				<label>$INFO[System.Time] | $INFO[System.Date]</label>
+				<font>font18</font>
+				<textcolor>semi-transparent-text</textcolor>
+				<aligny>bottom</aligny>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+		</control>
+		<control type="image">
+			<posy>80</posy>				
+			<width>1280</width>
+			<height>4</height>
+			<texture>separator.png</texture>
+		</control>
+			
 		<control type="grouplist">
 			<left>946</left>
 			<top>35</top>
@@ -18,20 +52,6 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<orientation>horizontal</orientation>
-			<control type="label"><!-- Video screen heading -->
-				<width max="256">auto</width>
-				<height>72</height>
-				<label>$VAR[VideoHeadings]</label>
-				<font>font18</font>
-				<wrapmultiline>true</wrapmultiline>
-				<aligny>top</aligny>
-			</control>
-			<control type="label"><!-- Number of files -->
-				<width max="80">auto</width>
-				<height>72</height>
-				<label>$INFO[Container.NumItems,(,)]</label>
-				<aligny>top</aligny>
-			</control>
 		</control>
 
 		<control type="group"><!-- Various Views of Video library node -->

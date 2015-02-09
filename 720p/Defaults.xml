@@ -124,7 +124,7 @@
 	<default type="selectbutton">
 		<font>font13</font>
 		<texturefocus border="7">button-default-focus.png</texturefocus>
-		<texturebgcolours>colours/white.png</texturebgcolours>
+		<texturebg>colours/white.png</texturebg>
 		<textureleft>scroll-left.png</textureleft>
 		<textureleftfocus>scroll-left-focus.png</textureleftfocus>
 		<textureright>scroll-right.png</textureright>

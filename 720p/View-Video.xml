@@ -30,7 +30,7 @@
 					<top>16</top>
 					<width>16</width>
 					<height>16</height>
-					<texture fallback="white.png">$VAR[ExtrasOverlay]</texture>
+					<texture fallback="colours/white.png">$VAR[ExtrasOverlay]</texture>
 					<visible>System.HasAddon(script.videoextras)</visible>
 				</control>
 				<control type="image">
