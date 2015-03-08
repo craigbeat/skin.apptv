@@ -30,7 +30,7 @@
 					<top>16</top>
 					<width>16</width>
 					<height>16</height>
-					<texture fallback="colours/white.png">$VAR[ExtrasOverlay]</texture>
+					<texture fallback="blank.png">$VAR[ExtrasOverlay]</texture>
 					<visible>System.HasAddon(script.videoextras)</visible>
 				</control>
 				<control type="image">
@@ -626,7 +626,7 @@
 			</control>
 			<control type="group" id="951">
 				<visible>Control.IsVisible(950)</visible>
-				<animation effect="fade" start="100" end="100" time="200" reversible="false">Hidden</animation>
+				<animation effect="fade" start="100" end="0" time="200" reversible="false">Hidden</animation>
 				<control type="image">
 					<left>-88</left>
 					<top>190</top>
@@ -861,7 +861,7 @@
 						<top>0</top>
 						<width>542</width>
 						<height>100</height>
-						<texture>colours/white.png</texture>
+						<texture>colours/black.png</texture>
 						<aspectratio>stretch</aspectratio>
 						<colordiffuse>UnFocusedPosters</colordiffuse>
 					</control>
@@ -892,7 +892,7 @@
 						<top>0</top>
 						<width>558</width>
 						<height>116</height>
-						<texture border="8" background="true">colours/white.png</texture>
+						<texture border="8" background="true">button-menu-background.png</texture>
 					</control>
 					<control type="image"><!-- Go Back image -->
 						<left>8</left>
@@ -1730,8 +1730,7 @@
 						<height>169</height>
 						<texture>mask-hilite.png</texture>
 						<aspectratio>stretch</aspectratio>
-						<animation effect="fade" start="0" end="100" time="300" delay="300">Visible</animation>
-						<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
+						<animation effect="fade" start="0" end="100" time="100" delay="100">Visible</animation>
 						<visible>![Container().OnScrollNext | Container().OnScrollPrevious] + !SubString(ListItem.Icon,Default,Left)</visible>
 					</control>
 					<control type="image">
@@ -1780,8 +1779,7 @@
 						<height>120</height>
 						<texture>mask-hilite.png</texture>
 						<aspectratio>stretch</aspectratio>
-						<animation effect="fade" start="0" end="100" time="300" delay="300">Visible</animation>
-						<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
+						<animation effect="fade" start="0" end="100" time="100" delay="100">Visible</animation>
 						<visible>![Container().OnScrollNext | Container().OnScrollPrevious] + !SubString(ListItem.Icon,Default,Left)</visible>
 					</control>
 					<control type="image">
@@ -1916,4 +1914,4 @@
 			</control>
 		</control>
 	</include>
-</includes>
+</includes>f

@@ -4,14 +4,22 @@
 	<content target="video">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</content>
 	</include>
 
+	<include name="TVRecordings">
+	<content target="video">pvr://recordings/</content>
+	</include>
+
 	<include name="MovieRecommended">
 	<content target="video">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window.Property(recommendedmovies)]</content>
+	</include>
+	
+	<include name="DynamicShelf">
+	<content target="video">$INFO[Skin.String(CustomRow1.1.Shelf)]</content>
 	</include>
 
 	<include name="EpisodeRecent">
 	<content target="video">plugin://service.library.data.provider?type=recentepisodes&amp;reload=$INFO[Window.Property(recentepisodes)]</content>
 	</include>
-
+	
 	<include name="EpisodeRecommended">
 	<content target="video">plugin://service.library.data.provider?type=recommendedepispodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]</content>
 	</include>
@@ -24,43 +32,180 @@
 	<content target="video">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</content>
 	</include>
 
-	<include name="AddonFavourites">
-		<item>
-			<label>$INFO[Skin.String(CustomAddon.1.Label)]</label>
-			<onclick>$INFO[Skin.String(CustomAddon.1.Path)]</onclick>
-			<thumb>$INFO[Skin.String(CustomAddon.1.Icon)]</thumb>
-			<property name="ItemType">$LOCALIZE[31652]</property>
-			<visible>!IsEmpty(Skin.String(CustomAddon.1.Path))</visible>
-		</item>
-		<item>
-			<label>$INFO[Skin.String(CustomAddon.2.Label)]</label>
-			<onclick>$INFO[Skin.String(CustomAddon.2.Path)]</onclick>
-			<thumb>$INFO[Skin.String(CustomAddon.2.Icon)]</thumb>
-			<property name="ItemType">$LOCALIZE[31652]</property>
-			<visible>!IsEmpty(Skin.String(CustomAddon.2.Path))</visible>
-		</item>
-		<item>
-			<label>$INFO[Skin.String(CustomAddon.3.Label)]</label>
-			<onclick>$INFO[Skin.String(CustomAddon.3.Path)]</onclick>
-			<thumb>$INFO[Skin.String(CustomAddon.3.Icon)]</thumb>
-			<property name="ItemType">$LOCALIZE[31652]</property>
-			<visible>!IsEmpty(Skin.String(CustomAddon.3.Path))</visible>
-		</item>
-		<item>
-			<label>$INFO[Skin.String(CustomAddon.4.Label)]</label>
-			<onclick>$INFO[Skin.String(CustomAddon.4.Path)]</onclick>
-			<thumb>$INFO[Skin.String(CustomAddon.4.Icon)]</thumb>
-			<property name="ItemType">$LOCALIZE[31652]</property>
-			<visible>!IsEmpty(Skin.String(CustomAddon.4.Path))</visible>
-		</item>
-		<item>
-			<label>$INFO[Skin.String(CustomAddon.5.Label)]</label>
-			<onclick>$INFO[Skin.String(CustomAddon.5.Path)]</onclick>
-			<thumb>$INFO[Skin.String(CustomAddon.5.Icon)]</thumb>
-			<property name="ItemType">$LOCALIZE[31652]</property>
-			<visible>!IsEmpty(Skin.String(CustomAddon.5.Path))</visible>
-		</item>
+	
+	
+	
+	<include name="dynamic-shelficons-setup">
+		<control type="label"><!-- Movie shelf icons label -->
+			<left>55</left>
+			<top>16</top>
+			<height>22</height>
+			<width>400</width>
+			<label>$INFO[Container(9160).ListItem.Property(Type)]</label>
+			<font>font11</font>
+		</control>
 	</include>
+	<include name="dynamic-shelficons">		
+			<left>10</left>
+			<top>80</top>
+			<width>1260</width>
+			<height>225</height>
+			<onleft>9050</onleft>
+			<onright>9050</onright>
+			<onup>9050</onup>
+			<ondown>9000</ondown>
+			<viewtype label="31028">list</viewtype>
+			<scrolltime>200</scrolltime>
+			<orientation>horizontal</orientation>
+			<itemlayout height="245" width="160">
+				<control type="image">
+					<left>28</left>
+					<top>0</top>
+					<width>130</width>
+					<height>164</height>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture diffuse="mask-rect.png" fallback="DefaultVideo.png" background="true">$INFO[ListItem.Thumb]</texture>
+				</control>
+				<control type="image">
+					<left>28</left>
+					<top>175</top>
+					<width>130</width>
+					<height>164</height>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture flipy="true" diffuse="mask-fade.png" fallback="DefaultVideo.png" background="true">$INFO[ListItem.Thumb]</texture>
+				</control>
+			</itemlayout>
+			<focusedlayout height="245" width="160">
+				<control type="image">
+					<left>28</left>
+					<top>0</top>
+					<width>130</width>
+					<height>164</height>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture fallback="DefaultVideo.png" diffuse="mask-rect.png" background="true">$INFO[ListItem.Thumb]</texture>
+					<animation effect="zoom" end="150" center="80,101" time="100">Focus</animation>
+				</control>
+				<control type="image">
+					<left>28</left>
+					<top>175</top>
+					<width>130</width>
+					<height>164</height>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture fallback="DefaultVideo.png" flipy="true" diffuse="mask-fade.png" background="true">$INFO[ListItem.Thumb]</texture>
+					<animation effect="zoom" end="150" center="80,101" time="100">Focus</animation>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>183</top>
+					<height>44</height>
+					<width>190</width>
+					<label>$INFO[ListItem.Label]</label>
+					<font>font10</font>
+					<align>center</align>
+					<include condition="Skin.HasSetting(text-autoscroll)">scrolltext</include>
+					<animation effect="fade" time="100" delay="100">Focus</animation>
+					<visible>Control.HasFocus(9160)</visible>
+				</control>
+			</focusedlayout>
+	</include>
+	
+
+
+
+
+
+
+
+	<include name="tvrecordings-shelficons">
+		<control type="label"><!-- TV shelf icons label -->
+			<left>55</left>
+			<top>16</top>
+			<height>22</height>
+			<width>400</width>
+			<label>$INFO[Container(19160).ListItem.Property(Type)]</label>
+			<font>font11</font>
+		</control>
+		<control type="list" id="19160">
+			<left>10</left>
+			<top>80</top>
+			<width>1260</width>
+			<height>225</height>
+			<onleft>19050</onleft>
+			<onright>19050</onright>
+			<onup>19050</onup>
+			<ondown>9000</ondown>
+			<viewtype label="31028">list</viewtype>
+			<scrolltime>200</scrolltime>
+			<orientation>horizontal</orientation>
+			<itemlayout height="245" width="160">
+				<control type="image">
+					<left>28</left>
+					<top>0</top>
+					<width>130</width>
+					<height>164</height>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture diffuse="mask-rect.png" fallback="DefaultVideo.png" background="true">$INFO[ListItem.Thumb]</texture>
+				</control>
+				<control type="image">
+					<left>28</left>
+					<top>175</top>
+					<width>130</width>
+					<height>164</height>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture flipy="true" diffuse="mask-fade.png" fallback="DefaultVideo.png" background="true">$INFO[ListItem.Thumb]</texture>
+				</control>
+			</itemlayout>
+			<focusedlayout height="245" width="160">
+				<control type="image">
+					<left>28</left>
+					<top>0</top>
+					<width>130</width>
+					<height>164</height>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture fallback="DefaultVideo.png" diffuse="mask-rect.png" background="true">$INFO[ListItem.Thumb]</texture>
+					<animation effect="zoom" end="110" center="80,101" time="100">Focus</animation>
+				</control>
+				<control type="image">
+					<left>28</left>
+					<top>175</top>
+					<width>130</width>
+					<height>164</height>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture fallback="DefaultVideo.png" flipy="true" diffuse="mask-fade.png" background="true">$INFO[ListItem.Thumb]</texture>
+					<animation effect="zoom" end="110" center="80,101" time="100">Focus</animation>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>170</top>
+					<height>44</height>
+					<width>190</width>
+					<label>$INFO[ListItem.Label]</label>
+					<font>font10</font>
+					<align>center</align>
+					<include condition="Skin.HasSetting(text-autoscroll)">scrolltext</include>
+					<animation effect="fade" time="100" delay="100">Focus</animation>
+					<visible>Control.HasFocus(19160)</visible>
+				</control>
+			</focusedlayout>
+				<include>TVRecordings</include>
+		</control>
+		<control type="group">
+			<visible>Control.HasFocus(19160)</visible>
+			<left>0</left>
+			<top>40</top>
+		</control>
+	</include>
+	
+
+
+
+
+
+
+
+
+
+
 
 	<include name="movie-shelficons">
 		<control type="label"><!-- Movie shelf icons label -->
@@ -71,33 +216,11 @@
 			<label>$INFO[Container(9160).ListItem.Property(Type)]</label>
 			<font>font11</font>
 		</control>
-		<control type="image">
-			<left>0</left>
-			<top>58</top>
-			<width>130</width>
-			<height>178</height>
-			<aspectratio scalediffuse="false">stretch</aspectratio>
-			<texture diffuse="mask-rect.png" background="true">$VAR[MovieShelfIcon0]</texture>
-			<colordiffuse>UnFocusedPosters</colordiffuse>
-			<camera x="65" y="159" />
-			<animation effect="rotatey" center="0" end="-60" time="600" condition="true">Conditional</animation>
-		</control>
-		<control type="image">
-			<left>1190</left>
-			<top>58</top>
-			<width>130</width>
-			<height>178</height>
-			<aspectratio scalediffuse="false">stretch</aspectratio>
-			<texture diffuse="mask-rect.png" background="true">$VAR[MovieShelfIcon7]</texture>
-			<colordiffuse>UnFocusedPosters</colordiffuse>
-			<camera x="1215" y="159" />
-			<animation effect="rotatey" center="1280" end="60" time="600" condition="true">Conditional</animation>
-		</control>
 		<control type="list" id="9160">
 			<left>10</left>
-			<top>50</top>
+			<top>80</top>
 			<width>1260</width>
-			<height>245</height>
+			<height>225</height>
 			<onleft>9050</onleft>
 			<onright>9050</onright>
 			<onup>9050</onup>
@@ -105,46 +228,48 @@
 			<viewtype label="31028">list</viewtype>
 			<scrolltime>200</scrolltime>
 			<orientation>horizontal</orientation>
-			<itemlayout height="245" width="210">
+			<itemlayout height="245" width="160">
 				<control type="image">
 					<left>28</left>
 					<top>0</top>
-					<width>150</width>
-					<height>194</height>
+					<width>130</width>
+					<height>164</height>
 					<aspectratio scalediffuse="false">stretch</aspectratio>
 					<texture diffuse="mask-rect.png" fallback="DefaultVideo.png" background="true">$INFO[ListItem.Thumb]</texture>
 				</control>
 				<control type="image">
 					<left>28</left>
-					<top>195</top>
-					<width>150</width>
-					<height>194</height>
+					<top>175</top>
+					<width>130</width>
+					<height>164</height>
 					<aspectratio scalediffuse="false">stretch</aspectratio>
 					<texture flipy="true" diffuse="mask-fade.png" fallback="DefaultVideo.png" background="true">$INFO[ListItem.Thumb]</texture>
 				</control>
 			</itemlayout>
-			<focusedlayout height="245" width="210">
+			<focusedlayout height="245" width="160">
 				<control type="image">
 					<left>28</left>
 					<top>0</top>
-					<width>150</width>
-					<height>194</height>
+					<width>130</width>
+					<height>164</height>
 					<aspectratio scalediffuse="false">stretch</aspectratio>
 					<texture fallback="DefaultVideo.png" diffuse="mask-rect.png" background="true">$INFO[ListItem.Thumb]</texture>
+					<animation effect="zoom" end="110" center="80,101" time="100">Focus</animation>
 				</control>
 				<control type="image">
 					<left>28</left>
-					<top>195</top>
-					<width>150</width>
-					<height>194</height>
+					<top>175</top>
+					<width>130</width>
+					<height>164</height>
 					<aspectratio scalediffuse="false">stretch</aspectratio>
 					<texture fallback="DefaultVideo.png" flipy="true" diffuse="mask-fade.png" background="true">$INFO[ListItem.Thumb]</texture>
+					<animation effect="zoom" end="110" center="80,101" time="100">Focus</animation>
 				</control>
 				<control type="label">
 					<left>0</left>
-					<top>194</top>
+					<top>170</top>
 					<height>44</height>
-					<width>210</width>
+					<width>190</width>
 					<label>$INFO[ListItem.Label]</label>
 					<font>font10</font>
 					<align>center</align>
@@ -160,22 +285,15 @@
 			<visible>Control.HasFocus(9160)</visible>
 			<left>0</left>
 			<top>40</top>
-			<control type="image"><!-- Focus slider -->
-				<left>28</left>
-				<top>0</top>
-				<width>169</width>
-				<height>214</height>
-				<texture border="8">mask-hilite2.png</texture>
-				<aspectratio>stretch</aspectratio>
-			</control>
-			<animation condition="Container(9160).Position(0)" effect="slide" start="0,0" end="0,0" time="150" easing="inout" reversible="true">Conditional</animation>
-			<animation condition="Container(9160).Position(1)" effect="slide" start="0,0" end="210,0" time="150" easing="inout" reversible="true">Conditional</animation>
-			<animation condition="Container(9160).Position(2)" effect="slide" start="0,0" end="420,0" time="150" easing="inout" reversible="true">Conditional</animation>
-			<animation condition="Container(9160).Position(3)" effect="slide" start="0,0" end="630,0" time="150" easing="inout" reversible="true">Conditional</animation>
-			<animation condition="Container(9160).Position(4)" effect="slide" start="0,0" end="840,0" time="150" easing="inout" reversible="true">Conditional</animation>
-			<animation condition="Container(9160).Position(5)" effect="slide" start="0,0" end="1050,0" time="150" easing="inout" reversible="true">Conditional</animation>
 		</control>
 	</include>
+	
+	
+	
+	
+	
+	
+	
 	<include name="tvshow-shelfbanner">
 		<control type="image">
 			<left>12</left>
@@ -223,30 +341,22 @@
 		</control>
 	</include>
 	<include name="tvshow-shelfthumb">
-		<control type="image"><!-- Background shadow to pad out thumb image -->
-			<left>31</left>
-			<top>8</top>
-			<width>190</width>
-			<height>190</height>
-			<texture diffuse="mask-rect.png">colours/white.png</texture>
-			<aspectratio>stretch</aspectratio>
-		</control>
 		<control type="image">
 			<left>31</left>
 			<top>8</top>
-			<width>190</width>
-			<height>190</height>
+			<width>130</width>
+			<height>164</height>
 			<aligny>top</aligny>
-			<aspectratio scalediffuse="false">keep</aspectratio>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="mask-rect.png" fallback="DefaultTvshows.png" background="true">$INFO[ListItem.Thumb]</texture>
 		</control>
 		<control type="image">
 			<left>31</left>
 			<top>198</top>
-			<width>190</width>
-			<height>190</height>
+			<width>130</width>
+			<height>164</height>
 			<aligny>top</aligny>
-			<aspectratio scalediffuse="false">keep</aspectratio>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="mask-fade.png" flipy="true" fallback="DefaultTvshows.png" background="true">$INFO[ListItem.Thumb]</texture>
 		</control>
 	</include>
@@ -258,124 +368,6 @@
 			<width>400</width>
 			<label>$INFO[Container(9210).ListItem.Property(Type)]</label>
 			<font>font11</font>
-		</control>
-		<control type="group">
-			<visible>StringCompare(Skin.String(shelf-tvshowimgtyp),$LOCALIZE[31949])</visible><!-- Banners -->
-			<camera x="640" y="180" />
-			<control type="image">
-				<left>0</left>
-				<top>72</top>
-				<width>232</width>
-				<height>160</height>
-				<aligny>bottom</aligny>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<texture diffuse="mask-rect.png" background="true">$VAR[TVShowShelfArt0]</texture>
-				<colordiffuse>UnFocusedPosters</colordiffuse>
-				<animation effect="rotatey" center="0" end="-60" time="300" condition="true">Conditional</animation>
-			</control>
-			<control type="image">
-				<left>0</left>
-				<top>190</top>
-				<width>232</width>
-				<height>42</height>
-				<aligny>bottom</aligny>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<texture diffuse="mask-rect.png" background="true">$VAR[TVShowShelfIcon0]</texture>
-				<colordiffuse>UnFocusedPosters</colordiffuse>
-				<animation effect="rotatey" center="0" end="-60" time="300" condition="true">Conditional</animation>
-			</control>
-			<control type="image">
-				<left>1048</left>
-				<top>72</top>
-				<width>232</width>
-				<height>160</height>
-				<aligny>bottom</aligny>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<texture diffuse="mask-rect.png" background="true">$VAR[TVShowShelfArt7]</texture>
-				<colordiffuse>UnFocusedPosters</colordiffuse>
-				<animation effect="rotatey" center="1280" end="60" time="300" condition="true">Conditional</animation>
-			</control>
-			<control type="image">
-				<left>1048</left>
-				<top>190</top>
-				<width>232</width>
-				<height>42</height>
-				<aligny>bottom</aligny>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<texture diffuse="mask-rect.png" background="true">$VAR[TVShowShelfIcon7]</texture>
-				<colordiffuse>UnFocusedPosters</colordiffuse>
-				<animation effect="rotatey" center="1280" end="60" time="300" condition="true">Conditional</animation>
-			</control>
-		</control>
-		<control type="group">
-			<visible>[IsEmpty(Skin.String(shelf-tvshowimgtyp)) | StringCompare(Skin.String(shelf-tvshowimgtyp),$LOCALIZE[21371])]</visible><!-- Thumbs -->
-			<camera x="640" y="159" />
-			<control type="image"><!-- Background shadow to pad out thumb image -->
-				<left>-6</left>
-				<top>48</top>
-				<width>190</width>
-				<height>190</height>
-				<texture diffuse="mask-rect.png">colours/white.png</texture>
-				<colordiffuse>UnFocusedPosters</colordiffuse>
-				<aspectratio>stretch</aspectratio>
-				<animation effect="rotatey" center="0" end="-60" time="300" condition="true">Conditional</animation>
-				<visible>!IsEmpty(Control.GetLabel(9230))</visible>
-			</control>
-			<control type="image" id="9230">
-				<left>0</left>
-				<top>54</top>
-				<width>178</width>
-				<height>178</height>
-				<aspectratio scalediffuse="false">keep</aspectratio>
-				<texture diffuse="mask-rect.png" background="true">$VAR[TVShowShelfIcon0]</texture>
-				<colordiffuse>UnFocusedPosters</colordiffuse>
-				<animation effect="rotatey" center="0" end="-60" time="300" condition="true">Conditional</animation>
-			</control>
-			<control type="image"><!-- Background shadow to pad out thumb image -->
-				<left>1096</left>
-				<top>48</top>
-				<width>190</width>
-				<height>190</height>
-				<texture diffuse="mask-rect.png">colours/white.png</texture>
-				<colordiffuse>UnFocusedPosters</colordiffuse>
-				<aspectratio>stretch</aspectratio>
-				<animation effect="rotatey" center="1280" end="60" time="300" condition="true">Conditional</animation>
-				<visible>!IsEmpty(Control.GetLabel(9231))</visible>
-			</control>
-			<control type="image" id="9231">
-				<left>1102</left>
-				<top>54</top>
-				<width>178</width>
-				<height>178</height>
-				<aspectratio scalediffuse="false">keep</aspectratio>
-				<texture diffuse="mask-rect.png" background="true">$VAR[TVShowShelfIcon7]</texture>
-				<colordiffuse>UnFocusedPosters</colordiffuse>
-				<animation effect="rotatey" center="1280" end="60" time="300" condition="true">Conditional</animation>
-			</control>
-		</control>
-		<control type="group">
-			<visible>StringCompare(Skin.String(shelf-tvshowimgtyp),$LOCALIZE[31950])</visible><!-- Posters -->
-			<camera x="640" y="159" />
-			<control type="image">
-				<left>-30</left>
-				<top>54</top>
-				<width>178</width>
-				<height>178</height>
-				<aspectratio scalediffuse="false">keep</aspectratio>
-				<texture diffuse="mask-rect.png" background="true">$VAR[TVShowShelfIcon0]</texture>
-				<colordiffuse>UnFocusedPosters</colordiffuse>
-				<animation effect="rotatey" center="0" end="-60" time="300" condition="true">Conditional</animation>
-			</control>
-			<control type="image">
-				<left>1134</left>
-				<top>54</top>
-				<width>178</width>
-				<height>178</height>
-				<aspectratio scalediffuse="false">keep</aspectratio>
-				<texture diffuse="mask-rect.png" background="true">$VAR[TVShowShelfIcon7]</texture>
-				<colordiffuse>UnFocusedPosters</colordiffuse>
-				<animation effect="rotatey" center="1280" end="60" time="300" condition="true">Conditional</animation>
-			</control>
 		</control>
 		<control type="list" id="9210">
 			<left>10</left>
@@ -436,7 +428,6 @@
 				</control>
 			</focusedlayout>
 			<include condition="System.HasAddon(service.library.data.provider) + StringCompare(Skin.String(shelf-tvshowimages),$LOCALIZE[31954])">EpisodeRecent</include>
-			<!--<include condition="System.HasAddon(script.tv.show.next.aired) + StringCompare(Skin.String(shelf-tvshowimages),$LOCALIZE[31956])">EpisodeNextAired</include>-->
 			<include condition="System.HasAddon(service.library.data.provider) + StringCompare(Skin.String(shelf-tvshowimages),$LOCALIZE[31955])">EpisodeRecommended</include>
 		</control>
 		<control type="group">
@@ -495,6 +486,22 @@
 		</control>
 	</include>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<include name="music-shelficons">
 		<control type="label"><!-- Album shelf icon label-->
 			<left>55</left>
@@ -503,28 +510,6 @@
 			<width>400</width>
 			<label>$INFO[Container(9260).ListItem.Property(Type)]</label>
 			<font>font11</font>
-		</control>
-		<control type="image">
-			<left>0</left>
-			<top>65</top>
-			<width>164</width>
-			<height>164</height>
-			<aspectratio scalediffuse="false">stretch</aspectratio>
-			<texture diffuse="mask-squ.png" background="true">$VAR[MusicShelfIcon0]</texture>
-			<colordiffuse>UnFocusedPosters</colordiffuse>
-			<camera x="65" y="159" />
-			<animation effect="rotatey" center="0" end="-60" time="300" condition="true">Conditional</animation>
-		</control>
-		<control type="image">
-			<left>1136</left>
-			<top>65</top>
-			<width>164</width>
-			<height>164</height>
-			<aspectratio scalediffuse="false">stretch</aspectratio>
-			<texture diffuse="mask-squ.png" background="true">$VAR[MusicShelfIcon7]</texture>
-			<colordiffuse>UnFocusedPosters</colordiffuse>
-			<camera x="1212" y="159" />
-			<animation effect="rotatey" center="1276" end="60" time="300" condition="true">Conditional</animation>
 		</control>
 		<control type="list" id="9260">
 			<left>10</left>
@@ -623,6 +608,12 @@
 			<animation condition="Container(9260).Position(5)" effect="slide" start="0,0" end="1050,0" time="150" easing="inout" reversible="true">Conditional</animation>
 		</control>
 	</include>
+
+
+
+
+
+
 
 	<include name="addons-shelficons">
 		<control type="label"><!-- Addon shelf icon label-->

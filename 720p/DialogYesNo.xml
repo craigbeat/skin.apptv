@@ -14,6 +14,9 @@
 			<width>690</width>
 			<height>240</height>
 			<texture border="8">colours/white.png</texture>
+			<bordertexture border="5">colours/grey.png</bordertexture>
+			<bordersize>5</bordersize>
+			<colordiffuse>mask-background</colordiffuse>
 		</control>
 		<control type="label" id="1"><!-- Dialog heading -->
 			<left>315</left>

@@ -10,7 +10,7 @@
 	<color name="disabled-text">FF333333</color>
 	<color name="button-text">FF222222</color>
 	<color name="shutdown-text">FF000000</color>
-	<color name="shadow-text">33DDDDDD</color>
+	<color name="shadow-text">99DDDDDD</color>
 	<color name="warning-text">FFAA0000</color>
 	<color name="invalid-text">FFAA0000</color>
 	<color name="rss-headline-text">FF000000</color>

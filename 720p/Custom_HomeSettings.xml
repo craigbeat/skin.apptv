@@ -4,95 +4,22 @@
 	<allowoverlay>yes</allowoverlay>
 	<include>screen-fade</include>
 	<controls>
-		<include>background</include>
-		<include>Fake-Overlay</include>
-
-		<control type="label"><!-- Settings label line 1 -->
-			<left>946</left>
-			<top>25</top>
-			<width>309</width>
-			<height>31</height>
-			<label>$LOCALIZE[636] $LOCALIZE[1036]</label>
-			<font>font18</font>
-		</control>
-		<control type="label"><!-- Settings label line 2 -->
-			<left>946</left>
-			<top>62</top>
-			<width>309</width>
-			<height>31</height>
-			<label>$LOCALIZE[5]</label>
-			<font>font18</font>
+		<include>fullscreenimage</include>
+		<control type="label"><!-- Name of the app -->
+				<include>showappname</include>
+				<label>$LOCALIZE[636] $LOCALIZE[1036]</label>
 		</control>
 		<control type="group" id="999">
-			<control type="button" id="981"><!-- Custom Movie settings button -->
+			<control type="button" id="981"><!-- First row settings button -->
 				<font>font12</font>
 				<left>940</left>
 				<top>112</top>
 				<width>305</width>
 				<height>56</height>
-				<label>$LOCALIZE[342]</label>
-				<onfocus>Skin.SetString(customsettingmenu,movie)</onfocus>
+				<label>$LOCALIZE[31033]</label>
+				<onfocus>Skin.SetString(customsettingmenu,row1)</onfocus>
 				<ondown>982</ondown>
 				<onleft>100</onleft>
-			</control>
-			<control type="button" id="982"><!-- Custom TVShows settings button -->
-				<font>font12</font>
-				<left>940</left>
-				<top>166</top>
-				<width>305</width>
-				<height>56</height>
-				<label>$LOCALIZE[20343]</label>
-				<onfocus>Skin.SetString(customsettingmenu,tvshows)</onfocus>
-				<onup>981</onup>
-				<ondown>983</ondown>
-				<onleft>200</onleft>
-			</control>
-			<control type="button" id="983"><!-- Custom Music settings button -->
-				<font>font12</font>
-				<left>940</left>
-				<top>220</top>
-				<width>305</width>
-				<height>56</height>
-				<label>$LOCALIZE[2]</label>
-				<onfocus>Skin.SetString(customsettingmenu,music)</onfocus>
-				<onup>982</onup>
-				<ondown>984</ondown>
-				<onleft>300</onleft>
-			</control>
-			<control type="button" id="984"><!-- Custom Addons settings button -->
-				<font>font12</font>
-				<left>940</left>
-				<top>274</top>
-				<width>305</width>
-				<height>56</height>
-				<label>$LOCALIZE[24001]</label>
-				<onfocus>Skin.SetString(customsettingmenu,addon)</onfocus>
-				<onup>983</onup>
-				<ondown>985</ondown>
-				<onleft>400</onleft>
-			</control>
-			<control type="button" id="985"><!-- Custom TV settings button -->
-				<font>font12</font>
-				<left>940</left>
-				<top>328</top>
-				<width>305</width>
-				<height>56</height>
-				<label>$LOCALIZE[19020]</label>
-				<onfocus>Skin.SetString(customsettingmenu,tv)</onfocus>
-				<onup>984</onup>
-				<ondown>986</ondown>
-				<onleft>500</onleft>
-			</control>
-			<control type="button" id="986"><!-- Custom Radio settings button -->
-				<font>font12</font>
-				<left>940</left>
-				<top>382</top>
-				<width>305</width>
-				<height>56</height>
-				<label>$LOCALIZE[19021]</label>
-				<onfocus>Skin.SetString(customsettingmenu,radio)</onfocus>
-				<onup>985</onup>
-				<onleft>600</onleft>
 			</control>
 		</control>
 
@@ -107,9 +34,9 @@
 		</control>
 		<control type="group" id="998">
 
-			<control type="group" id="100"><!--Custom Movie Settings-->
-				<visible>Skin.String(customsettingmenu,movie)</visible>
-				<control type="image"><!-- Movie settings button image -->
+			<control type="group" id="100"><!--Row 1 Settings-->
+				<visible>Skin.String(customsettingmenu,row1)</visible>
+				<control type="image"><!-- Row 1 settings button image -->
 					<left>940</left>
 					<top>112</top>
 					<width>305</width>
@@ -118,27 +45,6 @@
 					<include>settingbutton-fade</include>
 					<visible>!ControlGroup(999).HasFocus()</visible>
 				</control>
-				<!-- Markers for control area items (Don't show if scrollbar is in use)-->
-				<control type="group">
-					<visible>StringCompare(Skin.String(show-scrollbar),$LOCALIZE[31877])</visible><!-- Don't show scrollbar -->
-					<control type="image">
-						<left>480</left>
-						<top>88</top>
-						<height>30</height>
-						<width>30</width>
-						<texture>scroll-up.png</texture>
-						<visible>Container(101).HasPrevious</visible>
-					</control>
-					<control type="image">
-						<left>480</left>
-						<top>646</top>
-						<height>30</height>
-						<width>30</width>
-						<texture>scroll-down.png</texture>
-						<visible>Container(101).HasNext</visible>
-					</control>
-				</control>
-
 				<control type="grouplist" id="101">
 					<left>53</left>
 					<top>112</top>
@@ -150,655 +56,457 @@
 					<onleft>1223</onleft>
 					<onright>999</onright>
 					<pagecontrol>1223</pagecontrol>
-					<control type="button" id="105"><!-- Movie favourite 1 -->
+					
+					
+					
+					<control type="button" id="105"><!-- Item 1 -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 1</label>
-						<label2>$INFO[Skin.String(CustomMovies.1.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomMovies.1)</onclick>
+						<label>$LOCALIZE[31034] 1</label>
+						<label2>$INFO[Skin.String(CustomRow1.1.Label)]</label2>
+						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRow1.1)</onclick>
 					</control>
-					<control type="button" id="106"><!-- Movie favourite 1 icon location -->
-						<include>settings-submenu-common</include>
-						<textwidth>480</textwidth>
-						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomMovies.1.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomMovies.1.Icon,.jpg|.png)</onclick>
-					</control>
-					<control type="button" id="107"><!-- Movie favourite 2 -->
-						<include>settings-submenu-common</include>
-						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 2</label>
-						<label2>$INFO[Skin.String(CustomMovies.2.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomMovies.2)</onclick>
-					</control>
-					<control type="button" id="108"><!-- Movie favourite 2 icon location -->
+					<control type="button" id="106"><!-- Item 1 icon location -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
 						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomMovies.2.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomMovies.2.Icon,.jpg|.png)</onclick>
+						<label2>$INFO[Skin.String(CustomRow1.1.Icon)] </label2>
+						<onclick>Skin.SetFile(CustomRow1.1.Icon,.jpg|.png)</onclick>
 					</control>
-					<control type="button" id="109"><!-- Movie favourite 3 -->
+					<control type="button" id="107"><!-- Item 1 shelf -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 3</label>
-						<label2>$INFO[Skin.String(CustomMovies.3.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomMovies.3)</onclick>
+						<label>- $LOCALIZE[31939]</label>
+						<label2>$INFO[Skin.String(CustomRow1.1.Shelf)] </label2>
+						<onclick>Skin.SetString(CustomRow1.1.Shelf)</onclick>
 					</control>
-					<control type="button" id="110"><!-- Movie favourite 3 icon location -->
+					
+					
+					
+					<control type="button" id="108"><!-- Item 2 -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomMovies.3.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomMovies.3.Icon,.jpg|.png)</onclick>
+						<label>$LOCALIZE[31034] 2</label>
+						<label2>$INFO[Skin.String(CustomRow1.2.Label)]</label2>
+						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRow1.2)</onclick>
 					</control>
-					<control type="button" id="111"><!-- Movie favourite 4 -->
-						<include>settings-submenu-common</include>
-						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 4</label>
-						<label2>$INFO[Skin.String(CustomMovies.4.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomMovies.4)</onclick>
-					</control>
-					<control type="button" id="112"><!-- Movie favourite 4 icon location -->
+					<control type="button" id="109"><!-- Item 2 icon location -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
 						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomMovies.4.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomMovies.4.Icon,.jpg|.png)</onclick>
+						<label2>$INFO[Skin.String(CustomRow1.2.Icon)] </label2>
+						<onclick>Skin.SetFile(CustomRow1.2.Icon,.jpg|.png)</onclick>
 					</control>
-					<control type="button" id="113"><!-- Movie favourite 5 -->
+					<control type="button" id="110"><!-- Item 2 shelf -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 5</label>
-						<label2>$INFO[Skin.String(CustomMovies.5.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomMovies.5)</onclick>
-					</control>
-					<control type="button" id="114"><!-- Movie favourite 5 icon location -->
+						<label>- $LOCALIZE[31939]</label>
+						<label2>$INFO[Skin.String(CustomRow1.2.Shelf)] </label2>
+						<onclick>Skin.SetString(CustomRow1.2.Shelf)</onclick>
+					</control>					
+					
+					
+					
+					<control type="button" id="111"><!-- Item 3 -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomMovies.5.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomMovies.5.Icon,.jpg|.png)</onclick>
+						<label>$LOCALIZE[31034] 3</label>
+						<label2>$INFO[Skin.String(CustomRow1.3.Label)]</label2>
+						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRow1.3)</onclick>
 					</control>
-				</control>
-			</control>
-
-			<control type="group" id="200"><!--Custom TVShows Settings-->
-				<visible>Skin.String(customsettingmenu,tvshows)</visible>
-				<control type="image"><!-- TVShows settings button image -->
-					<left>940</left>
-					<top>166</top>
-					<width>305</width>
-					<height>56</height>
-					<texture border="8">button-default-focus.png</texture>
-					<include>settingbutton-fade</include>
-					<visible>!ControlGroup(999).HasFocus()</visible>
-				</control>
-				<!-- Markers for control area items (Don't show if scrollbar is in use)-->
-				<control type="group">
-					<visible>StringCompare(Skin.String(show-scrollbar),$LOCALIZE[31877])</visible><!-- Don't show scrollbar -->
-					<control type="image">
-						<left>480</left>
-						<top>88</top>
-						<height>30</height>
-						<width>30</width>
-						<texture>scroll-up.png</texture>
-						<visible>Container(201).HasPrevious</visible>
-					</control>
-					<control type="image">
-						<left>480</left>
-						<top>646</top>
-						<height>30</height>
-						<width>30</width>
-						<texture>scroll-down.png</texture>
-						<visible>Container(201).HasNext</visible>
-					</control>
-				</control>
-
-				<control type="grouplist" id="201">
-					<left>53</left>
-					<top>112</top>
-					<width>885</width>
-					<height>542</height>
-					<itemgap>-2</itemgap>
-					<onup>201</onup>
-					<ondown>201</ondown>
-					<onleft>1223</onleft>
-					<onright>999</onright>
-					<pagecontrol>1223</pagecontrol>
-					<control type="button" id="208"><!-- TVShow favourite 1 -->
-						<include>settings-submenu-common</include>
-						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 1</label>
-						<label2>$INFO[Skin.String(CustomTVShow.1.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomTVShow.1)</onclick>
-					</control>
-					<control type="button" id="209"><!-- TVShow favourite 1 icon location -->
+					<control type="button" id="112"><!-- Item 3 icon location -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
 						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomTVShow.1.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomTVShow.1.Icon,.jpg|.png)</onclick>
+						<label2>$INFO[Skin.String(CustomRow1.3.Icon)] </label2>
+						<onclick>Skin.SetFile(CustomRow1.3.Icon,.jpg|.png)</onclick>
 					</control>
-					<control type="button" id="210"><!-- TVShow favourite 2 -->
+					<control type="button" id="113"><!-- Item 1 shelf -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 2</label>
-						<label2>$INFO[Skin.String(CustomTVShow.2.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomTVShow.2)</onclick>
-					</control>
-					<control type="button" id="211"><!-- TVShow favourite 2 icon location -->
+						<label>- $LOCALIZE[31939]</label>
+						<label2>$INFO[Skin.String(CustomRow1.3.Shelf)] </label2>
+						<onclick>Skin.SetString(CustomRow1.3.Shelf)</onclick>
+					</control>					
+					
+					
+					
+					
+					<control type="button" id="114"><!-- Item 4 -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomTVShow.2.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomTVShow.2.Icon,.jpg|.png)</onclick>
+						<label>$LOCALIZE[31034] 4</label>
+						<label2>$INFO[Skin.String(CustomRow1.4.Label)]</label2>
+						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRow1.4)</onclick>
 					</control>
-					<control type="button" id="212"><!-- TVShow favourite 3 -->
-						<include>settings-submenu-common</include>
-						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 3</label>
-						<label2>$INFO[Skin.String(CustomTVShow.3.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomTVShow.3)</onclick>
-					</control>
-					<control type="button" id="213"><!-- TVShow favourite 3 icon location -->
+					<control type="button" id="115"><!-- Item 4 icon location -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
 						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomTVShow.3.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomTVShow.3.Icon,.jpg|.png)</onclick>
+						<label2>$INFO[Skin.String(CustomRow1.4.Icon)] </label2>
+						<onclick>Skin.SetFile(CustomRow1.4.Icon,.jpg|.png)</onclick>
 					</control>
-					<control type="button" id="214"><!-- TVShow favourite 4 -->
+					<control type="button" id="116"><!-- Item 4 shelf -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 4</label>
-						<label2>$INFO[Skin.String(CustomTVShow.4.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomTVShow.4)</onclick>
-					</control>
-					<control type="button" id="215"><!-- TVShow favourite 4 icon location -->
+						<label>- $LOCALIZE[31939]</label>
+						<label2>$INFO[Skin.String(CustomRow1.4.Shelf)] </label2>
+						<onclick>Skin.SetString(CustomRow1.4.Shelf)</onclick>
+					</control>					
+					
+					
+					
+					
+					<control type="button" id="117"><!-- Item 5 -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomTVShow.4.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomTVShow.4.Icon,.jpg|.png)</onclick>
+						<label>$LOCALIZE[31034] 5</label>
+						<label2>$INFO[Skin.String(CustomRow1.5.Label)]</label2>
+						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRow1.5)</onclick>
 					</control>
-					<control type="button" id="216"><!-- TVShow favourite 5 -->
-						<include>settings-submenu-common</include>
-						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 5</label>
-						<label2>$INFO[Skin.String(CustomTVShow.5.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomTVShow.5)</onclick>
-					</control>
-					<control type="button" id="217"><!-- TVShow favourite 5 icon location -->
+					<control type="button" id="118"><!-- Item 5 icon location -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
 						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomTVShow.5.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomTVShow.5.Icon,.jpg|.png)</onclick>
+						<label2>$INFO[Skin.String(CustomRow1.5.Icon)] </label2>
+						<onclick>Skin.SetFile(CustomRow1.5.Icon,.jpg|.png)</onclick>
 					</control>
-				</control>
-			</control>
-
-			<control type="group" id="300"><!--Custom Music settings-->
-				<visible>Skin.String(customsettingmenu,music)</visible>
-				<control type="image"><!-- Music settings button image -->
-					<left>940</left>
-					<top>220</top>
-					<width>305</width>
-					<height>56</height>
-					<texture border="8">button-default-focus.png</texture>
-					<include>settingbutton-fade</include>
-					<visible>!ControlGroup(999).HasFocus()</visible>
-				</control>
-				<!-- Markers for control area items (Don't show if scrollbar is in use)-->
-				<control type="group">
-					<visible>StringCompare(Skin.String(show-scrollbar),$LOCALIZE[31877])</visible><!-- Don't show scrollbar -->
-					<control type="image">
-						<left>480</left>
-						<top>88</top>
-						<height>30</height>
-						<width>30</width>
-						<texture>scroll-up.png</texture>
-						<visible>Container(301).HasPrevious</visible>
-					</control>
-					<control type="image">
-						<left>480</left>
-						<top>646</top>
-						<height>30</height>
-						<width>30</width>
-						<texture>scroll-down.png</texture>
-						<visible>Container(301).HasNext</visible>
-					</control>
-				</control>
-
-				<control type="grouplist" id="301">
-					<left>53</left>
-					<top>112</top>
-					<width>885</width>
-					<height>542</height>
-					<itemgap>-2</itemgap>
-					<onup>301</onup>
-					<ondown>301</ondown>
-					<onleft>1223</onleft>
-					<onright>999</onright>
-					<pagecontrol>1223</pagecontrol>
-
-					<control type="button" id="305"><!-- Music favourite 1 -->
+					<control type="button" id="119"><!-- Item 5 shelf -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 1</label>
-						<label2>$INFO[Skin.String(CustomMusic.1.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomMusic.1)</onclick>
+						<label>- $LOCALIZE[31939]</label>
+						<label2>$INFO[Skin.String(CustomRow1.5.Shelf)] </label2>
+						<onclick>Skin.SetString(CustomRow1.5.Shelf)</onclick>
+					</control>					
+					
+					
+					
+					
+					<control type="button" id="120"><!-- Item 6 -->
+						<include>settings-submenu-common</include>
+						<textwidth>480</textwidth>
+						<label>$LOCALIZE[31034] 6</label>
+						<label2>$INFO[Skin.String(CustomRow1.6.Label)]</label2>
+						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRow1.6)</onclick>
 					</control>
-					<control type="button" id="306"><!-- Music favourite 1 icon location -->
+					<control type="button" id="121"><!-- Item 6 icon location -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
 						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomMusic.1.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomMusic.1.Icon,.jpg|.png)</onclick>
+						<label2>$INFO[Skin.String(CustomRow1.6.Icon)] </label2>
+						<onclick>Skin.SetFile(CustomRow1.6.Icon,.jpg|.png)</onclick>
 					</control>
-					<control type="button" id="307"><!-- Music favourite 2 -->
+					<control type="button" id="122"><!-- Item 6 shelf -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 2</label>
-						<label2>$INFO[Skin.String(CustomMusic.2.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomMusic.2)</onclick>
-					</control>
-					<control type="button" id="308"><!-- Music favourite 2 icon location -->
+						<label>- $LOCALIZE[31939]</label>
+						<label2>$INFO[Skin.String(CustomRow1.6.Shelf)] </label2>
+						<onclick>Skin.SetString(CustomRow1.6.Shelf)</onclick>
+					</control>					
+					
+					
+					
+					
+					<control type="button" id="123"><!-- Item 7 -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomMusic.2.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomMusic.2.Icon,.jpg|.png)</onclick>
+						<label>$LOCALIZE[31034] 7</label>
+						<label2>$INFO[Skin.String(CustomRow1.7.Label)]</label2>
+						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRow1.7)</onclick>
 					</control>
-					<control type="button" id="309"><!-- Music favourite 3 -->
-						<include>settings-submenu-common</include>
-						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 3</label>
-						<label2>$INFO[Skin.String(CustomMusic.3.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomMusic.3)</onclick>
-					</control>
-					<control type="button" id="310"><!-- Music favourite 3 icon location -->
+					<control type="button" id="124"><!-- Item 7 icon location -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
 						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomMusic.3.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomMusic.3.Icon,.jpg|.png)</onclick>
+						<label2>$INFO[Skin.String(CustomRow1.7.Icon)] </label2>
+						<onclick>Skin.SetFile(CustomRow1.7.Icon,.jpg|.png)</onclick>
 					</control>
-					<control type="button" id="311"><!-- Music favourite 4 -->
+					<control type="button" id="125"><!-- Item 7 shelf -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 4</label>
-						<label2>$INFO[Skin.String(CustomMusic.4.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomMusic.4)</onclick>
-					</control>
-					<control type="button" id="312"><!-- Music favourite 4 icon location -->
+						<label>- $LOCALIZE[31939]</label>
+						<label2>$INFO[Skin.String(CustomRow1.7.Shelf)] </label2>
+						<onclick>Skin.SetString(CustomRow1.7.Shelf)</onclick>
+					</control>					
+					
+					
+					
+					
+					<control type="button" id="126"><!-- Item 8 -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomMusic.4.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomMusic.4.Icon,.jpg|.png)</onclick>
+						<label>$LOCALIZE[31034] 8</label>
+						<label2>$INFO[Skin.String(CustomRow1.8.Label)]</label2>
+						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRow1.8)</onclick>
 					</control>
-					<control type="button" id="313"><!-- Music favourite 5 -->
-						<include>settings-submenu-common</include>
-						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 5</label>
-						<label2>$INFO[Skin.String(CustomMusic.5.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomMusic.5)</onclick>
-					</control>
-					<control type="button" id="314"><!-- Music favourite 5 icon location -->
+					<control type="button" id="127"><!-- Item 8 icon location -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
 						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomMusic.5.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomMusic.5.Icon,.jpg|.png)</onclick>
+						<label2>$INFO[Skin.String(CustomRow1.8.Icon)] </label2>
+						<onclick>Skin.SetFile(CustomRow1.8.Icon,.jpg|.png)</onclick>
 					</control>
-				</control>
-			</control>
-
-			<control type="group" id="400"><!--Custom Addon Settings-->
-				<visible>Skin.String(customsettingmenu,addon)</visible>
-				<control type="image"><!-- Addon settings button image -->
-					<left>940</left>
-					<top>274</top>
-					<width>305</width>
-					<height>56</height>
-					<texture border="8">button-default-focus.png</texture>
-					<include>settingbutton-fade</include>
-					<visible>!ControlGroup(999).HasFocus()</visible>
-				</control>
-				<!-- Markers for control area items (Don't show if scrollbar is in use)-->
-				<control type="group">
-					<visible>StringCompare(Skin.String(show-scrollbar),$LOCALIZE[31877])</visible><!-- Don't show scrollbar -->
-					<control type="image">
-						<left>480</left>
-						<top>88</top>
-						<height>30</height>
-						<width>30</width>
-						<texture>scroll-up.png</texture>
-						<visible>Container(401).HasPrevious</visible>
-					</control>
-					<control type="image">
-						<left>480</left>
-						<top>646</top>
-						<height>30</height>
-						<width>30</width>
-						<texture>scroll-down.png</texture>
-						<visible>Container(401).HasNext</visible>
-					</control>
-				</control>
-
-				<control type="grouplist" id="401">
-					<left>53</left>
-					<top>112</top>
-					<width>885</width>
-					<height>542</height>
-					<itemgap>-2</itemgap>
-					<onup>401</onup>
-					<ondown>401</ondown>
-					<onleft>1223</onleft>
-					<onright>999</onright>
-					<pagecontrol>1223</pagecontrol>
-					<control type="button" id="405"><!-- Addon favourite 1 -->
+					<control type="button" id="128"><!-- Item 8 shelf -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 1</label>
-						<label2>$INFO[Skin.String(CustomAddon.1.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomAddon.1)</onclick>
+						<label>- $LOCALIZE[31939]</label>
+						<label2>$INFO[Skin.String(CustomRow1.8.Shelf)] </label2>
+						<onclick>Skin.SetString(CustomRow1.8.Shelf)</onclick>
+					</control>					
+					
+					
+					
+					
+					<control type="button" id="129"><!-- Item 9 -->
+						<include>settings-submenu-common</include>
+						<textwidth>480</textwidth>
+						<label>$LOCALIZE[31034] 9</label>
+						<label2>$INFO[Skin.String(CustomRow1.9.Label)]</label2>
+						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRow1.9)</onclick>
 					</control>
-					<control type="button" id="406"><!-- Addon favourite 1 icon location -->
+					<control type="button" id="130"><!-- Item 9 icon location -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
 						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomAddon.1.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomAddon.1.Icon,.jpg|.png)</onclick>
+						<label2>$INFO[Skin.String(CustomRow1.9.Icon)] </label2>
+						<onclick>Skin.SetFile(CustomRow1.9.Icon,.jpg|.png)</onclick>
 					</control>
-					<control type="button" id="407"><!-- Addon favourite 2 -->
+					<control type="button" id="131"><!-- Item 9 shelf -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 2</label>
-						<label2>$INFO[Skin.String(CustomAddon.2.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomAddon.2)</onclick>
-					</control>
-					<control type="button" id="408"><!-- Addon favourite 2 icon location -->
+						<label>- $LOCALIZE[31939]</label>
+						<label2>$INFO[Skin.String(CustomRow1.9.Shelf)] </label2>
+						<onclick>Skin.SetString(CustomRow1.9.Shelf)</onclick>
+					</control>					
+					
+					
+					
+					
+					<control type="button" id="132"><!-- Item 10 -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomAddon.2.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomAddon.2.Icon,.jpg|.png)</onclick>
+						<label>$LOCALIZE[31034] 10</label>
+						<label2>$INFO[Skin.String(CustomRow1.10.Label)]</label2>
+						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRow1.10)</onclick>
 					</control>
-					<control type="button" id="409"><!-- Addon favourite 3 -->
-						<include>settings-submenu-common</include>
-						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 3</label>
-						<label2>$INFO[Skin.String(CustomAddon.3.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomAddon.3)</onclick>
-					</control>
-					<control type="button" id="410"><!-- Addon favourite 3 icon location -->
+					<control type="button" id="133"><!-- Item 10 icon location -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
 						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomAddon.3.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomAddon.3.Icon,.jpg|.png)</onclick>
+						<label2>$INFO[Skin.String(CustomRow1.10.Icon)] </label2>
+						<onclick>Skin.SetFile(CustomRow1.10.Icon,.jpg|.png)</onclick>
 					</control>
-					<control type="button" id="411"><!-- Addon favourite 4 -->
+					<control type="button" id="134"><!-- Item 10 shelf -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 4</label>
-						<label2>$INFO[Skin.String(CustomAddon.4.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomAddon.4)</onclick>
-					</control>
-					<control type="button" id="412"><!-- Addon favourite 4 icon location -->
+						<label>- $LOCALIZE[31939]</label>
+						<label2>$INFO[Skin.String(CustomRow1.10.Shelf)] </label2>
+						<onclick>Skin.SetString(CustomRow1.10.Shelf)</onclick>
+					</control>					
+					
+					
+					
+					
+					<control type="button" id="135"><!-- Item 11 -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomAddon.4.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomAddon.4.Icon,.jpg|.png)</onclick>
+						<label>$LOCALIZE[31034] 11</label>
+						<label2>$INFO[Skin.String(CustomRow1.11.Label)]</label2>
+						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRow1.11)</onclick>
 					</control>
-					<control type="button" id="413"><!-- Addon favourite 5 -->
-						<include>settings-submenu-common</include>
-						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 5</label>
-						<label2>$INFO[Skin.String(CustomAddon.5.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomAddon.5)</onclick>
-					</control>
-					<control type="button" id="414"><!-- Addon favourite 5 icon location -->
+					<control type="button" id="136"><!-- Item 11 icon location -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
 						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomAddon.5.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomAddon.5.Icon,.jpg|.png)</onclick>
+						<label2>$INFO[Skin.String(CustomRow1.11.Icon)] </label2>
+						<onclick>Skin.SetFile(CustomRow1.11.Icon,.jpg|.png)</onclick>
 					</control>
-				</control>
-			</control>
-			<control type="group" id="500"><!--Custom TV Settings-->
-				<visible>Skin.String(customsettingmenu,tv)</visible>
-				<control type="image"><!-- TV settings button image -->
-					<left>940</left>
-					<top>328</top>
-					<width>305</width>
-					<height>56</height>
-					<texture border="8">button-default-focus.png</texture>
-					<include>settingbutton-fade</include>
-					<visible>!ControlGroup(999).HasFocus()</visible>
-				</control>
-				<!-- Markers for control area items (Don't show if scrollbar is in use)-->
-				<control type="group">
-					<visible>StringCompare(Skin.String(show-scrollbar),$LOCALIZE[31877])</visible><!-- Don't show scrollbar -->
-					<control type="image">
-						<left>480</left>
-						<top>88</top>
-						<height>30</height>
-						<width>30</width>
-						<texture>scroll-up.png</texture>
-						<visible>Container(501).HasPrevious</visible>
-					</control>
-					<control type="image">
-						<left>480</left>
-						<top>646</top>
-						<height>30</height>
-						<width>30</width>
-						<texture>scroll-down.png</texture>
-						<visible>Container(501).HasNext</visible>
-					</control>
-				</control>
-
-				<control type="grouplist" id="501">
-					<left>53</left>
-					<top>112</top>
-					<width>885</width>
-					<height>542</height>
-					<itemgap>-2</itemgap>
-					<onup>501</onup>
-					<ondown>501</ondown>
-					<onleft>1223</onleft>
-					<onright>999</onright>
-					<pagecontrol>1223</pagecontrol>
-					<control type="button" id="505"><!-- TV favourite 1 -->
+					<control type="button" id="137"><!-- Item 11 shelf -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 1</label>
-						<label2>$INFO[Skin.String(CustomTV.1.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomTV.1)</onclick>
+						<label>- $LOCALIZE[31939]</label>
+						<label2>$INFO[Skin.String(CustomRow1.11.Shelf)] </label2>
+						<onclick>Skin.SetString(CustomRow1.11.Shelf)</onclick>
+					</control>					
+					
+					
+					
+					
+					<control type="button" id="138"><!-- Item 12 -->
+						<include>settings-submenu-common</include>
+						<textwidth>480</textwidth>
+						<label>$LOCALIZE[31034] 12</label>
+						<label2>$INFO[Skin.String(CustomRow1.12.Label)]</label2>
+						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRow1.12)</onclick>
 					</control>
-					<control type="button" id="506"><!-- TV favourite 1 icon location -->
+					<control type="button" id="139"><!-- Item 12 icon location -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
 						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomTV.1.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomTV.1.Icon,.jpg|.png)</onclick>
+						<label2>$INFO[Skin.String(CustomRow1.12.Icon)] </label2>
+						<onclick>Skin.SetFile(CustomRow1.12.Icon,.jpg|.png)</onclick>
 					</control>
-					<control type="button" id="507"><!-- TV favourite 2 -->
+					<control type="button" id="140"><!-- Item 12 shelf -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 2</label>
-						<label2>$INFO[Skin.String(CustomTV.2.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomTV.2)</onclick>
-					</control>
-					<control type="button" id="508"><!-- TV favourite 2 icon location -->
+						<label>- $LOCALIZE[31939]</label>
+						<label2>$INFO[Skin.String(CustomRow1.12.Shelf)] </label2>
+						<onclick>Skin.SetString(CustomRow1.12.Shelf)</onclick>
+					</control>					
+					
+					
+					
+					
+					<control type="button" id="141"><!-- Item 13 -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomTV.2.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomTV.2.Icon,.jpg|.png)</onclick>
+						<label>$LOCALIZE[31034] 13</label>
+						<label2>$INFO[Skin.String(CustomRow1.13.Label)]</label2>
+						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRow1.13)</onclick>
 					</control>
-					<control type="button" id="509"><!-- TV favourite 3 -->
-						<include>settings-submenu-common</include>
-						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 3</label>
-						<label2>$INFO[Skin.String(CustomTV.3.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomTV.3)</onclick>
-					</control>
-					<control type="button" id="510"><!-- TV favourite 3 icon location -->
+					<control type="button" id="142"><!-- Item 13 icon location -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
 						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomTV.3.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomTV.3.Icon,.jpg|.png)</onclick>
+						<label2>$INFO[Skin.String(CustomRow1.13.Icon)] </label2>
+						<onclick>Skin.SetFile(CustomRow1.13.Icon,.jpg|.png)</onclick>
 					</control>
-					<control type="button" id="511"><!-- TV favourite 4 -->
+					<control type="button" id="143"><!-- Item 13 shelf -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 4</label>
-						<label2>$INFO[Skin.String(CustomTV.4.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomTV.4)</onclick>
-					</control>
-					<control type="button" id="512"><!-- TV favourite 4 icon location -->
+						<label>- $LOCALIZE[31939]</label>
+						<label2>$INFO[Skin.String(CustomRow1.13.Shelf)] </label2>
+						<onclick>Skin.SetString(CustomRow1.13.Shelf)</onclick>
+					</control>					
+					
+					
+					
+					
+					<control type="button" id="144"><!-- Item 14 -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomTV.4.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomTV.4.Icon,.jpg|.png)</onclick>
+						<label>$LOCALIZE[31034] 14</label>
+						<label2>$INFO[Skin.String(CustomRow1.14.Label)]</label2>
+						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRow1.14)</onclick>
 					</control>
-					<control type="button" id="513"><!-- TV favourite 5 -->
-						<include>settings-submenu-common</include>
-						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 5</label>
-						<label2>$INFO[Skin.String(CustomTV.5.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomTV.5)</onclick>
-					</control>
-					<control type="button" id="514"><!-- TV favourite 5 icon location -->
+					<control type="button" id="145"><!-- Item 14 icon location -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
 						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomTV.5.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomTV.5.Icon,.jpg|.png)</onclick>
+						<label2>$INFO[Skin.String(CustomRow1.14.Icon)] </label2>
+						<onclick>Skin.SetFile(CustomRow1.14.Icon,.jpg|.png)</onclick>
 					</control>
-				</control>
-			</control>
-			<control type="group" id="600"><!--Custom Radio Settings-->
-				<visible>Skin.String(customsettingmenu,radio)</visible>
-				<control type="image"><!-- Radio settings button image -->
-					<left>940</left>
-					<top>382</top>
-					<width>305</width>
-					<height>56</height>
-					<texture border="8">button-default-focus.png</texture>
-					<include>settingbutton-fade</include>
-					<visible>!ControlGroup(999).HasFocus()</visible>
-				</control>
-				<!-- Markers for control area items (Don't show if scrollbar is in use)-->
-				<control type="group">
-					<visible>StringCompare(Skin.String(show-scrollbar),$LOCALIZE[31877])</visible><!-- Don't show scrollbar -->
-					<control type="image">
-						<left>480</left>
-						<top>88</top>
-						<height>30</height>
-						<width>30</width>
-						<texture>scroll-up.png</texture>
-						<visible>Container(601).HasPrevious</visible>
-					</control>
-					<control type="image">
-						<left>480</left>
-						<top>646</top>
-						<height>30</height>
-						<width>30</width>
-						<texture>scroll-down.png</texture>
-						<visible>Container(601).HasNext</visible>
-					</control>
-				</control>
-
-				<control type="grouplist" id="601">
-					<left>53</left>
-					<top>112</top>
-					<width>885</width>
-					<height>542</height>
-					<itemgap>-2</itemgap>
-					<onup>601</onup>
-					<ondown>601</ondown>
-					<onleft>1223</onleft>
-					<onright>999</onright>
-					<pagecontrol>1223</pagecontrol>
-					<control type="button" id="605"><!-- Radio favourite 1 -->
+					<control type="button" id="146"><!-- Item 14 shelf -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 1</label>
-						<label2>$INFO[Skin.String(CustomRadio.1.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRadio.1)</onclick>
+						<label>- $LOCALIZE[31939]</label>
+						<label2>$INFO[Skin.String(CustomRow1.14.Shelf)] </label2>
+						<onclick>Skin.SetString(CustomRow1.1.Shelf)</onclick>
+					</control>					
+					
+					
+					
+					
+					<control type="button" id="147"><!-- Item 15 -->
+						<include>settings-submenu-common</include>
+						<textwidth>480</textwidth>
+						<label>$LOCALIZE[31034] 15</label>
+						<label2>$INFO[Skin.String(CustomRow1.15.Label)]</label2>
+						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRow1.15)</onclick>
 					</control>
-					<control type="button" id="606"><!-- Radio favourite 1 icon location -->
+					<control type="button" id="148"><!-- Item 15 icon location -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
 						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomRadio.1.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomRadio.1.Icon,.jpg|.png)</onclick>
+						<label2>$INFO[Skin.String(CustomRow1.15.Icon)] </label2>
+						<onclick>Skin.SetFile(CustomRow1.5.Icon,.jpg|.png)</onclick>
 					</control>
-					<control type="button" id="607"><!-- Radio favourite 2 -->
+					<control type="button" id="149"><!-- Item 15 shelf -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 2</label>
-						<label2>$INFO[Skin.String(CustomRadio.2.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRadio.2)</onclick>
-					</control>
-					<control type="button" id="608"><!-- Radio favourite 2 icon location -->
+						<label>- $LOCALIZE[31939]</label>
+						<label2>$INFO[Skin.String(CustomRow1.15.Shelf)] </label2>
+						<onclick>Skin.SetString(CustomRow1.15.Shelf)</onclick>
+					</control>					
+					
+					
+					
+					
+					<control type="button" id="150"><!-- Item 16 -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomRadio.2.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomRadio.2.Icon,.jpg|.png)</onclick>
+						<label>$LOCALIZE[31034] 16</label>
+						<label2>$INFO[Skin.String(CustomRow1.16.Label)]</label2>
+						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRow1.16)</onclick>
 					</control>
-					<control type="button" id="609"><!-- Radio favourite 3 -->
-						<include>settings-submenu-common</include>
-						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 3</label>
-						<label2>$INFO[Skin.String(CustomRadio.3.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRadio.3)</onclick>
-					</control>
-					<control type="button" id="610"><!-- Radio favourite 3 icon location -->
+					<control type="button" id="151"><!-- Item 16 icon location -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
 						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomRadio.3.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomRadio.3.Icon,.jpg|.png)</onclick>
+						<label2>$INFO[Skin.String(CustomRow1.16.Icon)] </label2>
+						<onclick>Skin.SetFile(CustomRow1.16.Icon,.jpg|.png)</onclick>
 					</control>
-					<control type="button" id="611"><!-- Radio favourite 4 -->
+					<control type="button" id="152"><!-- Item 16 shelf -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 4</label>
-						<label2>$INFO[Skin.String(CustomRadio.4.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRadio.4)</onclick>
-					</control>
-					<control type="button" id="612"><!-- Radio favourite 4 icon location -->
+						<label>- $LOCALIZE[31939]</label>
+						<label2>$INFO[Skin.String(CustomRow1.16.Shelf)] </label2>
+						<onclick>Skin.SetString(CustomRow1.16.Shelf)</onclick>
+					</control>					
+					
+					
+					
+					
+					<control type="button" id="153"><!-- Item 17 -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
-						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomRadio.4.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomRadio.4.Icon,.jpg|.png)</onclick>
+						<label>$LOCALIZE[31034] 17</label>
+						<label2>$INFO[Skin.String(CustomRow1.17.Label)]</label2>
+						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRow1.17)</onclick>
 					</control>
-					<control type="button" id="613"><!-- Radio favourite 5 -->
-						<include>settings-submenu-common</include>
-						<textwidth>480</textwidth>
-						<label>$LOCALIZE[1036] 5</label>
-						<label2>$INFO[Skin.String(CustomRadio.5.Label)]</label2>
-						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRadio.5)</onclick>
-					</control>
-					<control type="button" id="614"><!-- Radio favourite 5 icon location -->
+					<control type="button" id="154"><!-- Item 17 icon location -->
 						<include>settings-submenu-common</include>
 						<textwidth>480</textwidth>
 						<label>- $LOCALIZE[21371]</label>
-						<label2>$INFO[Skin.String(CustomRadio.5.Icon)] </label2>
-						<onclick>Skin.SetFile(CustomRadio.5.Icon,.jpg|.png)</onclick>
+						<label2>$INFO[Skin.String(CustomRow1.17.Icon)] </label2>
+						<onclick>Skin.SetFile(CustomRow1.17.Icon,.jpg|.png)</onclick>
 					</control>
+					<control type="button" id="155"><!-- Item 17 shelf -->
+						<include>settings-submenu-common</include>
+						<textwidth>480</textwidth>
+						<label>- $LOCALIZE[31939]</label>
+						<label2>$INFO[Skin.String(CustomRow1.17.Shelf)] </label2>
+						<onclick>Skin.SetString(CustomRow1.17.Shelf)</onclick>
+					</control>					
+					
+					
+					
+					
+					<control type="button" id="156"><!-- Item 18 -->
+						<include>settings-submenu-common</include>
+						<textwidth>480</textwidth>
+						<label>$LOCALIZE[31034] 18</label>
+						<label2>$INFO[Skin.String(CustomRow1.18.Label)]</label2>
+						<onclick>RunScript(script.favourites,changetitle=true&amp;property=CustomRow1.18)</onclick>
+					</control>
+					<control type="button" id="157"><!-- Item 18 icon location -->
+						<include>settings-submenu-common</include>
+						<textwidth>480</textwidth>
+						<label>- $LOCALIZE[21371]</label>
+						<label2>$INFO[Skin.String(CustomRow1.18.Icon)] </label2>
+						<onclick>Skin.SetFile(CustomRow1.18.Icon,.jpg|.png)</onclick>
+					</control>
+					<control type="button" id="158"><!-- Item 18 shelf -->
+						<include>settings-submenu-common</include>
+						<textwidth>480</textwidth>
+						<label>- $LOCALIZE[31939]</label>
+						<label2>$INFO[Skin.String(CustomRow1.18.Shelf)] </label2>
+						<onclick>Skin.SetString(CustomRow1.18.Shelf)</onclick>
+					</control>					
+					
+					
+					
+					
 				</control>
 			</control>
 		</control>

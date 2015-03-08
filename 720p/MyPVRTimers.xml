@@ -4,7 +4,7 @@
 	<allowoverlay>no</allowoverlay>
 	<views>14</views>
 	<controls>
-		<include>backgroundvideo</include>
+		<include>background</include>
 		<include>Fake-Overlay</include>
 		<control type="grouplist">
 			<left>946</left>

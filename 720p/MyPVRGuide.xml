@@ -3,28 +3,9 @@
 	<defaultcontrol>10</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<views>10,11,12,13</views>
-	<include>screen-fade</include>
 	<controls>
-		<include>backgroundvideo</include>
+		<include>fullscreenimage</include>
 		<include>Fake-Overlay</include>
-		<control type="grouplist">
-			<right>330</right>
-			<top>45</top>
-			<width>auto</width>
-			<height>62</height>
-			<align>right</align>
-			<aligny>bottom</aligny>
-			<orientation>horizontal</orientation>
-			<control type="label"><!-- Video screen heading -->
-				<width max="356">auto</width>
-				<height>72</height>
-				<label>$INFO[System.Time] | $INFO[System.Date]</label>
-				<font>font18</font>
-				<textcolor>semi-transparent-text</textcolor>
-				<aligny>bottom</aligny>
-				<wrapmultiline>true</wrapmultiline>
-			</control>
-		</control>
 
 		<control type="group">
 			<include file="View-PVR.xml">PVRTimelineView</include>

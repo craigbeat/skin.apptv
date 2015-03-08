@@ -2,13 +2,635 @@
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<include>screen-fade</include>
 	<controls>
-		<!-- Use Vertical Home menu-->
-		<include condition="Skin.HasSetting(homemenu-vertical)" file="Includes_VertHome.xml">VertHomeMenu</include>
-		<!-- Use Horizontal Home menu-->
-		<include condition="Skin.HasSetting(homemenu-horizontal) | [!Skin.HasSetting(homemenu-vertical) + !Skin.HasSetting(homemenu-icon)]" file="Includes_HorzHome.xml">HorzHomeMenu</include>
-		<!-- Use Icon Home menu-->
-		<include condition="Skin.HasSetting(homemenu-icon)" file="Includes_IconHome.xml">IconHomeMenu</include>
+		<control type="group">
+			<include>fullscreenimage</include>
+
+			<control type="group" id="9800"><!-- Shelf icons-->
+			
+			
+			
+			
+				<control type="group" id="9155"><!-- Item 1 Shelf -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,"item1")</visible>
+					<control type="group">
+						<control type="list" id="9160">	
+							<include file="Includes_Shelf.xml">dynamic-shelficons</include>
+							<content target="video">$INFO[Skin.String(CustomRow1.1.Shelf)]</content>
+						</control>
+					</control>
+				</control>
+				<control type="group" id="9155"><!-- Item 2 Shelf -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,"item2"</visible>
+					<control type="group">
+						<control type="list" id="9160">	
+							<include file="Includes_Shelf.xml">dynamic-shelficons</include>
+							<content target="video">$INFO[Skin.String(CustomRow1.2.Shelf)]</content>
+						</control>
+					</control>
+				</control>
+				
+				
+				
+				<control type="group" id="9155"><!-- Item 3 Shelf -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,"item3"</visible>
+					<control type="group">
+						<control type="list" id="9160">	
+							<include file="Includes_Shelf.xml">dynamic-shelficons</include>
+							<content target="video">$INFO[Skin.String(CustomRow1.3.Shelf)]</content>
+						</control>
+					</control>
+				</control>
+				<control type="group" id="9155"><!-- Item 4 Shelf -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,"item4"</visible>
+					<control type="group">
+						<control type="list" id="9160">	
+							<include file="Includes_Shelf.xml">dynamic-shelficons</include>
+							<content target="video">$INFO[Skin.String(CustomRow1.4.Shelf)]</content>
+						</control>
+					</control>
+				</control>
+				<control type="group" id="9155"><!-- Item 5 Shelf -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,"item5"</visible>
+					<control type="group">
+						<control type="list" id="9160">	
+							<include file="Includes_Shelf.xml">dynamic-shelficons</include>
+							<content target="video">$INFO[Skin.String(CustomRow1.5.Shelf)]</content>
+						</control>
+					</control>
+				</control>
+				<control type="group" id="9155"><!-- Item 6 Shelf -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,"item6"</visible>
+					<control type="group">
+						<control type="list" id="9160">	
+							<include file="Includes_Shelf.xml">dynamic-shelficons</include>
+							<content target="video">$INFO[Skin.String(CustomRow1.6.Shelf)]</content>
+						</control>
+					</control>
+				</control>
+				<control type="group" id="9155"><!-- Item 7 Shelf -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,"item7"</visible>
+					<control type="group">
+						<control type="list" id="9160">	
+							<include file="Includes_Shelf.xml">dynamic-shelficons</include>
+							<content target="video">$INFO[Skin.String(CustomRow1.7.Shelf)]</content>
+						</control>
+					</control>
+				</control>
+				<control type="group" id="9155"><!-- Item 8 Shelf -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,"item8"</visible>
+					<control type="group">
+						<control type="list" id="9160">	
+							<include file="Includes_Shelf.xml">dynamic-shelficons</include>
+							<content target="video">$INFO[Skin.String(CustomRow1.8.Shelf)]</content>
+						</control>
+					</control>
+				</control>
+				<control type="group" id="9155"><!-- Item 9 Shelf -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,"item9"</visible>
+					<control type="group">
+						<control type="list" id="9160">	
+							<include file="Includes_Shelf.xml">dynamic-shelficons</include>
+							<content target="video">$INFO[Skin.String(CustomRow1.9.Shelf)]</content>
+						</control>
+					</control>
+				</control>
+				<control type="group" id="9155"><!-- Item 10 Shelf -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,"item10"</visible>
+					<control type="group">
+						<control type="list" id="9160">	
+							<include file="Includes_Shelf.xml">dynamic-shelficons</include>
+							<content target="video">$INFO[Skin.String(CustomRow1.10.Shelf)]</content>
+						</control>
+					</control>
+				</control>
+				<control type="group" id="9155"><!-- Item 11 Shelf -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,"item11"</visible>
+					<control type="group">
+						<control type="list" id="9160">	
+							<include file="Includes_Shelf.xml">dynamic-shelficons</include>
+							<content target="video">$INFO[Skin.String(CustomRow1.11.Shelf)]</content>
+						</control>
+					</control>
+				</control>
+				<control type="group" id="9155"><!-- Item 12 Shelf -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,"item12"</visible>
+					<control type="group">
+						<control type="list" id="9160">	
+							<include file="Includes_Shelf.xml">dynamic-shelficons</include>
+							<content target="video">$INFO[Skin.String(CustomRow1.12.Shelf)]</content>
+						</control>
+					</control>
+				</control>
+				<control type="group" id="9155"><!-- Item 13 Shelf -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,"item13"</visible>
+					<control type="group">
+						<control type="list" id="9160">	
+							<include file="Includes_Shelf.xml">dynamic-shelficons</include>
+							<content target="video">$INFO[Skin.String(CustomRow1.13.Shelf)]</content>
+						</control>
+					</control>
+				</control>
+				<control type="group" id="9155"><!-- Item 14 Shelf -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,"item14"</visible>
+					<control type="group">
+						<control type="list" id="9160">	
+							<include file="Includes_Shelf.xml">dynamic-shelficons</include>
+							<content target="video">$INFO[Skin.String(CustomRow1.14.Shelf)]</content>
+						</control>
+					</control>
+				</control>
+				<control type="group" id="9155"><!-- Item 15 Shelf -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,"item15"</visible>
+					<control type="group">
+						<control type="list" id="9160">	
+							<include file="Includes_Shelf.xml">dynamic-shelficons</include>
+							<content target="video">$INFO[Skin.String(CustomRow1.15.Shelf)]</content>
+						</control>
+					</control>
+				</control>
+				<control type="group" id="9155"><!-- Item 16 Shelf -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,"item16"</visible>
+					<control type="group">
+						<control type="list" id="9160">	
+							<include file="Includes_Shelf.xml">dynamic-shelficons</include>
+							<content target="video">$INFO[Skin.String(CustomRow1.16.Shelf)]</content>
+						</control>
+					</control>
+				</control>
+				<control type="group" id="9155"><!-- Item 17 Shelf -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,"item17"</visible>
+					<control type="group">
+						<control type="list" id="9160">	
+							<include file="Includes_Shelf.xml">dynamic-shelficons</include>
+							<content target="video">$INFO[Skin.String(CustomRow1.17.Shelf)]</content>
+						</control>
+					</control>
+				</control>
+				<control type="group" id="9155"><!-- Item 18 Shelf -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,"item18"</visible>
+					<control type="group">
+						<control type="list" id="9160">	
+							<include file="Includes_Shelf.xml">dynamic-shelficons</include>
+							<content target="video">$INFO[Skin.String(CustomRow1.18.Shelf)]</content>
+						</control>
+					</control>
+				</control>
+				
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+				<control type="group" id="9155"><!-- TV -->
+					<visible>StringCompare(Container(9000).ListItem.Label,"TV"</visible>
+					<control type="group">
+						<include file="Includes_Shelf.xml">tvrecordings-shelficons</include>
+					</control>
+				</control>				
+				
+				<control type="group" id="9205"><!-- TV Shows icons -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,$LOCALIZE[20343])</visible>
+					<control type="group">
+						<visible>System.HasAddon(service.skin.widgets) + ![StringCompare(Skin.String(shelf-tvshowimages),$LOCALIZE[31953])]</visible>
+						<include file="Includes_Shelf.xml">tvshow-shelficons</include>
+					</control>
+				</control>
+				
+				<control type="group" id="9255"><!-- Music icons -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,$LOCALIZE[2])</visible>
+					<control type="group">
+						<visible>System.HasAddon(service.skin.widgets) + ![StringCompare(Skin.String(shelf-musicimages),$LOCALIZE[31953])]</visible>
+						<include file="Includes_Shelf.xml">music-shelficons</include>
+					</control>
+				</control>
+				
+				<control type="group" id="9801"><!-- Weather icons -->
+					<visible>StringCompare(Container(9000).ListItem.Label2,$LOCALIZE[8])</visible>
+					<control type="group">
+						<visible>!Weather.IsFetched</visible>
+						<control type="image">
+							<left>552</left>
+							<top>38</top>
+							<width>176</width>
+							<height>176</height>
+							<texture>icon-weather.png</texture>
+						</control>
+						<control type="image">
+							<left>552</left>
+							<top>214</top>
+							<width>176</width>
+							<height>176</height>
+							<texture flipy="true" diffuse="mask-fade.png">icon-weather.png</texture>
+						</control>
+					</control>
+					<control type="group">
+						<visible>Weather.IsFetched</visible>
+						<include condition="!IsEmpty(Weather.plugin) + [Skin.HasSetting(home-weather) | Skin.HasSetting(home-currentweather)]" file="Includes_Shelf.xml">ShelfWeather</include>
+					</control>
+				</control>				
+			</control>
+		</control>
+
+		<control type="button" id="9005"><!-- Play bump sound if user tries to leave menu by undefined direction -->
+			<left>-30</left>
+			<top>-30</top>
+			<width>1</width>
+			<height>1</height>
+			<onfocus>SetFocus(9000)</onfocus>
+			<onfocus>ActivateWindow(1157)</onfocus>
+		</control>
+		
+		
+		
+		
+		
+		<control type="button" id="19050"><!-- Play bump sound if user tries to leave Movie shelf by undefined direction -->
+			<left>-30</left>
+			<top>-30</top>
+			<width>1</width>
+			<height>1</height>
+			<onfocus>SetFocus(19160)</onfocus>
+			<onfocus>ActivateWindow(1157)</onfocus>
+		</control>		
+		
+		
+		
+		
+		<control type="button" id="9050"><!-- Play bump sound if user tries to leave Movie shelf by undefined direction -->
+			<left>-40</left>
+			<top>-40</top>
+			<width>1</width>
+			<height>1</height>
+			<onfocus>SetFocus(9160)</onfocus>
+			<onfocus>ActivateWindow(1157)</onfocus>
+		</control>
+		
+		
+		
+		
+		
+		
+		<control type="button" id="9052"><!-- Play bump sound if user tries to leave TV shelf by undefined direction -->
+			<left>-50</left>
+			<top>-50</top>
+			<width>1</width>
+			<height>1</height>
+			<onfocus>SetFocus(9210)</onfocus>
+			<onfocus>ActivateWindow(1157)</onfocus>
+		</control>
+		<control type="button" id="9054"><!-- Play bump sound if user tries to leave Music shelf by undefined direction -->
+			<left>-60</left>
+			<top>-60</top>
+			<width>1</width>
+			<height>1</height>
+			<onfocus>SetFocus(9260)</onfocus>
+			<onfocus>ActivateWindow(1157)</onfocus>
+		</control>
+		<control type="button" id="9056"><!-- Play bump sound if user tries to leave Addons shelf by undefined direction -->
+			<left>-70</left>
+			<top>-70</top>
+			<width>1</width>
+			<height>1</height>
+			<onfocus>SetFocus(9360)</onfocus>
+			<onfocus>ActivateWindow(1157)</onfocus>
+		</control>
+
+		
+		<control type="panel" id="9000"><!-- Home menu icon panel -->
+			<animation condition="(![Container(9000).Row(0) & !Container(9000).Row(1)]) | Container(9000).Row(2)] | Container(9000).HasPrevious()" effect="slide" start="0,0" end="0,-115" time="100">Conditonal</animation>
+			<width>1260</width>
+			<height>640</height>
+			<top>300</top>
+			<left>10</left>
+			<onleft>9005</onleft>
+			<onright>9005</onright>
+			<onup condition="![Control.IsVisible(9801) | Control.IsVisible(9802)]">9800</onup>
+			<onup condition="Control.IsVisible(9801) | Control.IsVisible(9802)">9005</onup>
+			<ondown>9005</ondown>
+			<scrolltime tween="sine" easing="inout">280</scrolltime>
+			<itemlayout height="115" width="202">
+				<control type="image"><!-- Icon image -->
+					<left>28</left>
+					<top>10</top>
+					<width>195</width>
+					<height>110</height>
+					<aspectratio>stretch</aspectratio>
+					<texture diffuse="homeiconmask.png">$INFO[ListItem.thumb]</texture>
+				</control>
+				<control type="image"><!-- Icon image -->
+					<left>28</left>
+					<top>10</top>
+					<width>195</width>
+					<height>110</height>
+					<aspectratio>stretch</aspectratio>
+					<texture diffuse="homeiconmask.png">special://skin/extras/homeicons/text_bg.png</texture>
+				</control>
+				<control type="label"><!-- Icon label -->
+					<left>0</left>
+					<top>96</top>
+					<width>250</width>
+					<height>20</height>
+					<textcolor>disabled-text</textcolor>
+					<font>font11</font>
+					<align>center</align>
+					<label>$INFO[ListItem.label]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout height="160" width="202">
+				<control type="image"><!-- Focused icon image -->
+					<left>28</left>
+					<top>10</top>
+					<width>195</width>
+					<height>110</height>
+					<aspectratio>stretch</aspectratio>
+					<animation effect="zoom" end="110" center="80,101" time="100">Focus</animation>
+					<texture diffuse="homeiconmask.png">$INFO[ListItem.thumb]</texture>
+				</control>
+				<control type="image"><!-- Hilite focused image -->
+					<left>20</left>
+					<top>2</top>
+					<width>210</width>
+					<height>126</height>
+					<animation effect="zoom" end="110" center="80,101" time="100">Focus</animation>
+					<texture>homeiconhilite.png</texture>
+				</control>
+				<control type="image"><!-- Icon image -->
+					<left>28</left>
+					<top>10</top>
+					<width>195</width>
+					<height>110</height>
+					<aspectratio>stretch</aspectratio>
+					<animation effect="zoom" end="110" center="80,101" time="100">Focus</animation>
+					<texture diffuse="homeiconmask.png">special://skin/extras/homeicons/text_bg.png</texture>
+				</control>
+				<control type="label"><!-- Icon label -->
+					<left>0</left>
+					<top>96</top>
+					<width>250</width>
+					<height>20</height>
+					<textcolor>disabled-text</textcolor>
+					<font>font11</font>
+					<align>center</align>
+					<animation effect="zoom" end="110" center="80,101" time="100">Focus</animation>
+					<label>$INFO[ListItem.label]</label>
+				</control>
+			</focusedlayout>
+			<content>
+				<item><!-- Videos -->
+					<visible>!Skin.HasSetting(home-video)</visible>
+					<thumb>special://skin/extras/homeicons/video.png</thumb>
+					<label>$LOCALIZE[3]</label>
+					<label2>$LOCALIZE[571]</label2>
+					<onclick>ActivateWindow(Videolibrary,root,return)</onclick>
+				</item>
+				<item><!-- Movies -->
+					<visible>!Skin.HasSetting(home-movie)</visible>
+					<thumb>special://skin/extras/homeicons/movie.png</thumb>
+					<label>$LOCALIZE[31026]</label>
+					<label2>$LOCALIZE[31026]</label2>
+					<onclick>$VAR[MovieLibEntry]</onclick>
+				</item>
+				<item><!-- TV Shows -->
+					<visible>!Skin.HasSetting(home-tv)</visible>
+					<thumb>special://skin/extras/homeicons/tv.png</thumb>
+					<label>$LOCALIZE[20343]</label>
+					<label2>$LOCALIZE[20343]</label2>
+					<onclick>$VAR[TVLibEntry]</onclick>
+				</item>
+				<item><!-- Music -->
+					<visible>!Skin.HasSetting(home-music)</visible>
+					<thumb>special://skin/extras/homeicons/music.png</thumb>
+					<label>$LOCALIZE[2]</label>
+					<label2>$LOCALIZE[2]</label2>
+					<onclick>$VAR[MusicLibEntry]</onclick>
+				</item>
+				<item><!-- Music Videos -->
+					<visible>Skin.HasSetting(home-musicvideo)</visible>
+					<thumb>special://skin/extras/homeicons/musicvideo.png</thumb>
+					<label>$LOCALIZE[31028]</label>
+					<label2>$LOCALIZE[571]</label2>
+					<onclick>$VAR[MusicVideoLibEntry]</onclick>
+				</item>
+				<item><!-- Live TV -->
+					<visible>System.GetBool(pvrmanager.enabled) + Skin.HasSetting(home-tv)</visible>
+					<thumb>special://skin/extras/homeicons/livetv.png</thumb>
+					<label>$LOCALIZE[19020]</label>
+					<label2>$LOCALIZE[571]</label2>
+					<onclick>$VAR[TVEntry]</onclick>
+				</item>
+				<item><!-- Live Radio -->
+					<visible>System.GetBool(pvrmanager.enabled) + Skin.HasSetting(home-radio)</visible>
+					<thumb>special://skin/extras/homeicons/radio.png</thumb>
+					<label>$LOCALIZE[19021]</label>
+					<label2>$LOCALIZE[571]</label2>
+					<onclick>$VAR[RadioEntry]</onclick>
+				</item>
+				<item><!-- Pictures -->
+					<visible>Skin.HasSetting(home-photos)</visible>
+					<thumb>special://skin/extras/homeicons/pics.png</thumb>
+					<label>$LOCALIZE[1]</label>
+					<label2>$LOCALIZE[571]</label2>
+					<onclick>ActivateWindow(MyPictures,,return)</onclick>
+				</item>
+				<item><!-- Favourites -->
+					<visible>Skin.HasSetting(home-favorites)</visible>
+					<thumb>special://skin/extras/homeicons/favs.png</thumb>
+					<label>$LOCALIZE[31652]</label>
+					<label2>$LOCALIZE[571]</label2>
+					<onclick>ActivateWindow(Favourites)</onclick>
+				</item>
+				
+				
+				
+				
+				
+				<item>
+					<thumb>$INFO[Skin.String(CustomRow1.1.Icon)]</thumb>
+					<label>$INFO[Skin.String(CustomRow1.1.Label)]</label>
+					<label2>item1</label2>
+					<onclick>$INFO[Skin.String(CustomRow1.1.Path)]</onclick>
+					<visible>!IsEmpty(Skin.String(CustomRow1.1.Path))</visible>
+				</item>			
+				<item>
+					<thumb>$INFO[Skin.String(CustomRow1.2.Icon)]</thumb>
+					<label>$INFO[Skin.String(CustomRow1.2.Label)]</label>
+					<label2>item2</label2>
+					<onclick>$INFO[Skin.String(CustomRow1.2.Path)]</onclick>
+					<visible>!IsEmpty(Skin.String(CustomRow1.2.Path))</visible>
+				</item>
+				<item>
+					<thumb>$INFO[Skin.String(CustomRow1.3.Icon)]</thumb>
+					<label>$INFO[Skin.String(CustomRow1.3.Label)]</label>
+					<label2>item3</label2>
+					<onclick>$INFO[Skin.String(CustomRow1.3.Path)]</onclick>
+					<visible>!IsEmpty(Skin.String(CustomRow1.3.Path))</visible>
+				</item>
+				<item>
+					<thumb>$INFO[Skin.String(CustomRow1.4.Icon)]</thumb>
+					<label>$INFO[Skin.String(CustomRow1.4.Label)]</label>
+					<label2>item4</label2>
+					<onclick>$INFO[Skin.String(CustomRow1.4.Path)]</onclick>
+					<visible>!IsEmpty(Skin.String(CustomRow1.4.Path))</visible>
+				</item>
+				<item>
+					<thumb>$INFO[Skin.String(CustomRow1.5.Icon)]</thumb>
+					<label>$INFO[Skin.String(CustomRow1.5.Label)]</label>
+					<label2>item5</label2>
+					<onclick>$INFO[Skin.String(CustomRow1.5.Path)]</onclick>
+					<visible>!IsEmpty(Skin.String(CustomRow1.5.Path))</visible>
+				</item>
+				<item>
+					<thumb>$INFO[Skin.String(CustomRow1.6.Icon)]</thumb>
+					<label>$INFO[Skin.String(CustomRow1.6.Label)]</label>
+					<label2>item6</label2>
+					<onclick>$INFO[Skin.String(CustomRow1.6.Path)]</onclick>
+					<visible>!IsEmpty(Skin.String(CustomRow1.6.Path))</visible>
+				</item>
+				<item>
+					<thumb>$INFO[Skin.String(CustomRow1.7.Icon)]</thumb>
+					<label>$INFO[Skin.String(CustomRow1.7.Label)]</label>
+					<label2>item7</label2>
+					<onclick>$INFO[Skin.String(CustomRow1.7.Path)]</onclick>
+					<visible>!IsEmpty(Skin.String(CustomRow1.7.Path))</visible>
+				</item>
+				<item>
+					<thumb>$INFO[Skin.String(CustomRow1.8.Icon)]</thumb>
+					<label>$INFO[Skin.String(CustomRow1.8.Label)]</label>
+					<label2>item8</label2>
+					<onclick>$INFO[Skin.String(CustomRow1.8.Path)]</onclick>
+					<visible>!IsEmpty(Skin.String(CustomRow1.8.Path))</visible>
+				</item>
+				<item>
+					<thumb>$INFO[Skin.String(CustomRow1.9.Icon)]</thumb>
+					<label>$INFO[Skin.String(CustomRow1.9.Label)]</label>
+					<label2>item9</label2>
+					<onclick>$INFO[Skin.String(CustomRow1.9.Path)]</onclick>
+					<visible>!IsEmpty(Skin.String(CustomRow1.9.Path))</visible>
+				</item>
+				<item>
+					<thumb>$INFO[Skin.String(CustomRow1.10.Icon)]</thumb>
+					<label>$INFO[Skin.String(CustomRow1.10.Label)]</label>
+					<label2>item10</label2>
+					<onclick>$INFO[Skin.String(CustomRow1.10.Path)]</onclick>
+					<visible>!IsEmpty(Skin.String(CustomRow1.10.Path))</visible>
+				</item>
+				<item>
+					<thumb>$INFO[Skin.String(CustomRow1.11.Icon)]</thumb>
+					<label>$INFO[Skin.String(CustomRow1.11.Label)]</label>
+					<label2>item11</label2>
+					<onclick>$INFO[Skin.String(CustomRow1.11.Path)]</onclick>
+					<visible>!IsEmpty(Skin.String(CustomRow1.11.Path))</visible>
+				</item>
+				<item>
+					<thumb>$INFO[Skin.String(CustomRow1.12.Icon)]</thumb>
+					<label>$INFO[Skin.String(CustomRow1.12.Label)]</label>
+					<label2>item12</label2>
+					<onclick>$INFO[Skin.String(CustomRow1.12.Path)]</onclick>
+					<visible>!IsEmpty(Skin.String(CustomRow1.12.Path))</visible>
+				</item>
+				<item>
+					<thumb>$INFO[Skin.String(CustomRow1.13.Icon)]</thumb>
+					<label>$INFO[Skin.String(CustomRow1.13.Label)]</label>
+					<label2>item13</label2>
+					<onclick>$INFO[Skin.String(CustomRow1.13.Path)]</onclick>
+					<visible>!IsEmpty(Skin.String(CustomRow1.13.Path))</visible>
+				</item>
+				<item>
+					<thumb>$INFO[Skin.String(CustomRow1.14.Icon)]</thumb>
+					<label>$INFO[Skin.String(CustomRow1.14.Label)]</label>
+					<label2>item14</label2>
+					<onclick>$INFO[Skin.String(CustomRow1.14.Path)]</onclick>
+					<visible>!IsEmpty(Skin.String(CustomRow1.14.Path))</visible>
+				</item>
+				<item>
+					<thumb>$INFO[Skin.String(CustomRow1.15.Icon)]</thumb>
+					<label>$INFO[Skin.String(CustomRow1.15.Label)]</label>
+					<label2>item15</label2>
+					<onclick>$INFO[Skin.String(CustomRow1.15.Path)]</onclick>
+					<visible>!IsEmpty(Skin.String(CustomRow1.15.Path))</visible>
+				</item>
+				<item>
+					<thumb>$INFO[Skin.String(CustomRow1.16.Icon)]</thumb>
+					<label>$INFO[Skin.String(CustomRow1.16.Label)]</label>
+					<label2>item16</label2>
+					<onclick>$INFO[Skin.String(CustomRow1.16.Path)]</onclick>
+					<visible>!IsEmpty(Skin.String(CustomRow1.16.Path))</visible>
+				</item>
+				<item>
+					<thumb>$INFO[Skin.String(CustomRow1.17.Icon)]</thumb>
+					<label>$INFO[Skin.String(CustomRow1.17.Label)]</label>
+					<label2>item17</label2>
+					<onclick>$INFO[Skin.String(CustomRow1.17.Path)]</onclick>
+					<visible>!IsEmpty(Skin.String(CustomRow1.17.Path))</visible>
+				</item>
+				<item>
+					<thumb>$INFO[Skin.String(CustomRow1.18.Icon)]</thumb>
+					<label>$INFO[Skin.String(CustomRow1.18.Label)]</label>
+					<label2>item18</label2>
+					<onclick>$INFO[Skin.String(CustomRow1.18.Path)]</onclick>
+					<visible>!IsEmpty(Skin.String(CustomRow1.18.Path))</visible>
+				</item>
+				<item><!-- Weather -->
+					<visible>!IsEmpty(Weather.plugin) + [Skin.HasSetting(home-weather) | Skin.HasSetting(home-currentweather)]</visible>
+					<thumb>special://skin/extras/homeicons/weather.png</thumb>
+					<label>$LOCALIZE[8]</label>
+					<label2>$LOCALIZE[8]</label2>
+					<onclick>ActivateWindow(Weather,,return)</onclick>
+				</item>
+				<item><!-- Addons menu -->
+					<visible>!Skin.HasSetting(home-programs)</visible>
+					<thumb>special://skin/extras/homeicons/addons.png</thumb>
+					<label>$LOCALIZE[24001]</label>
+					<label2>$LOCALIZE[571]</label2>
+					<onclick>ActivateWindow(1155,,return)</onclick>
+				</item>
+				
+				<item><!-- Search -->
+					<visible>Skin.HasSetting(home-search)</visible>
+					<thumb>special://skin/extras/homeicons/search.png</thumb>
+					<label>$LOCALIZE[137]</label>
+					<label2>$LOCALIZE[571]</label2>
+					<onclick>RunScript(script.globalsearch)</onclick>
+				</item>
+				<item><!-- Profiles -->
+					<visible>Skin.HasSetting(home-profile)</visible>
+					<thumb>special://skin/extras/homeicons/users.png</thumb>
+					<label>$LOCALIZE[20092]</label>
+					<label2>$LOCALIZE[571]</label2>
+					<onclick>System.LogOff</onclick>
+				</item>
+				<item><!-- System menu -->
+					<thumb>special://skin/extras/homeicons/setting.png</thumb>
+					<label>$LOCALIZE[13000]</label>
+					<label2>$LOCALIZE[571]</label2>
+					<onclick>ActivateWindow(Settings,,return)</onclick>
+				</item>
+				
+				<item><!-- Quit -->
+					<visible>!Skin.HasSetting(home-shutdown)</visible>
+					<thumb>special://skin/extras/homeicons/quit.png</thumb>
+					<label>$LOCALIZE[13009]</label>
+					<label2>$LOCALIZE[571]</label2>
+					<onclick>$VAR[QuitAction]</onclick>
+				</item>
+			</content>
+		</control>
+		<control type="group">
+			<visible>[Container(9000).Row(0) | Container(9000).Row(1)] + !Container(9000).HasPrevious()</visible>
+			<include>home-mediaoverlay</include>
+		</control>
 	</controls>
 </window>

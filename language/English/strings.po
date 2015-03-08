@@ -48,7 +48,15 @@ msgctxt "#31032"
 msgid "Weather"
 msgstr ""
 
-#empty string with id 31033 - 31035
+msgctxt "#31033"
+msgid "Items"
+msgstr ""
+
+msgctxt "#31034"
+msgid "Item"
+msgstr ""
+
+#empty string with id 31035
 
 msgctxt "#31036"
 msgid "Play Disc"
